@@ -312,6 +312,71 @@ footer {
 footer strong { color:var(--mint); }
 footer a { color:var(--mint); text-decoration:none; }
 
+/* ── PADLET GUIDE EXTRAS ── */
+.guide-section-title {
+  font-family:'Playfair Display',serif; color:var(--forest);
+  font-size:18px; margin:28px 0 16px;
+  padding-left:12px; border-left:4px solid var(--sage);
+}
+
+.title-example {
+  margin-top:8px; background:#f0f7f2; padding:10px 14px;
+  border-radius:6px; font-style:italic; font-weight:700;
+  color:var(--forest); font-size:14px;
+}
+
+.privacy-notice {
+  margin-top:10px; background:rgba(193,127,58,.1);
+  border:1px solid rgba(193,127,58,.3);
+  border-radius:6px; padding:10px 14px;
+  font-size:13px; color:var(--text); line-height:1.6;
+}
+
+/* Media grid */
+.media-grid {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  gap:12px; margin-top:4px; margin-bottom:28px;
+}
+
+.media-card {
+  background:#fff; border:1.5px solid var(--warm);
+  border-radius:10px; padding:16px;
+  box-shadow:0 2px 6px rgba(0,0,0,.04);
+  transition:.2s;
+}
+.media-card:hover { box-shadow:0 4px 12px rgba(0,0,0,.09); border-color:var(--mint); }
+
+.media-icon { font-size:26px; margin-bottom:8px; }
+.media-name { font-weight:700; font-size:14px; color:var(--forest); margin-bottom:8px; }
+.media-how {
+  font-size:12.5px; color:var(--muted); line-height:1.65;
+}
+.media-how a { color:var(--sage); font-weight:600; text-decoration:none; }
+.media-how a:hover { text-decoration:underline; }
+.media-how strong { color:var(--text); }
+
+/* Checklist box */
+.checklist-box {
+  background:#f2f8f4; border:1.5px solid var(--mint);
+  border-radius:10px; padding:20px 22px; margin-top:8px;
+}
+.checklist-box h4 {
+  font-weight:700; font-size:15px; color:var(--forest); margin-bottom:12px;
+}
+.checklist-box ul {
+  padding-left:0; list-style:none;
+}
+.checklist-box li {
+  font-size:13.5px; padding:5px 0 5px 28px;
+  border-bottom:1px solid rgba(168,197,176,.3);
+  position:relative; line-height:1.5;
+}
+.checklist-box li:last-child { border-bottom:none; }
+.checklist-box li::before {
+  content:'✓'; position:absolute; left:4px;
+  color:var(--sage); font-weight:700; font-size:13px;
+}
+
 /* ── UTILITIES ── */
 @media(max-width:600px){
   .tab-btn { padding:8px 12px; font-size:12.5px; }
@@ -391,10 +456,10 @@ footer a { color:var(--mint); text-decoration:none; }
             <span class="kw">digital citizenship</span><span class="kw">responsibility</span><span class="kw">online rights</span><span class="kw">netiquette</span><span class="kw">cittadinanza digitale</span>
           </div>
           <div class="example-box">
-            <div class="ex-label">💬 Esempio concreto</div>
-            Un agricoltore che usa Instagram per vendere i suoi prodotti è un cittadino digitale: deve rispettare le regole della piattaforma, non pubblicare false informazioni sui prodotti, rispettare la privacy dei clienti e rispondere ai commenti in modo corretto.
+            <div class="ex-label">💬 Example</div>
+            A farmer who uses Instagram to sell his products is a digital citizen: he must follow the platform's rules, avoid posting false information <em>(informazioni false)</em>, respect his customers' privacy and reply to comments in a respectful way.
           </div>
-          <div class="slide-tip">Inserisci nella slide una definizione breve + un'immagine che rappresenti una persona che usa un dispositivo digitale in modo consapevole.</div>
+          <div class="slide-tip">Add a short definition to the slide and an image showing a person using digital tools responsibly — a student at a laptop, a farmer with a smartphone, etc.</div>
         </div>
       </div>
 
@@ -423,10 +488,10 @@ footer a { color:var(--mint); text-decoration:none; }
             <span class="kw">face-to-face</span><span class="kw">embodiment parziale</span><span class="kw">Zoom fatigue</span><span class="kw">asincrono</span><span class="kw">linguaggio del corpo</span><span class="kw">disinhibition effect</span>
           </div>
           <div class="example-box">
-            <div class="ex-label">💬 Esempio concreto</div>
-            In una riunione di persona con un fornitore di sementi, noti subito se l'altro è nervoso dal tremore delle mani o dall'incrocio delle braccia. In videochiamata, quella stessa persona appare solo a mezzo busto: perdi il 60% dei segnali non verbali che ti aiutano a capire se si sta fidando di te.
+            <div class="ex-label">💬 Example</div>
+            In a face-to-face meeting with a seed supplier <em>(fornitore di sementi)</em>, you immediately notice if the other person is nervous — from shaky hands or crossed arms. On a video call, you only see them from the chest up: you lose about 60% of the non-verbal signals <em>(segnali non verbali)</em> that help you understand whether they trust you.
           </div>
-          <div class="slide-tip">Usa una tabella con 4 differenze chiave (es: contatto oculare, velocità di risposta, tono, linguaggio del corpo). Molto visivo ed efficace.</div>
+          <div class="slide-tip">Use a two-column table with 4 key differences (e.g. eye contact, response speed, tone, body language). Very visual and easy to present.</div>
         </div>
       </div>
 
@@ -455,10 +520,10 @@ footer a { color:var(--mint); text-decoration:none; }
             <span class="kw">netiquette</span><span class="kw">galateo digitale</span><span class="kw">etichetta online</span><span class="kw">network etiquette</span><span class="kw">codice di condotta</span>
           </div>
           <div class="example-box">
-            <div class="ex-label">💬 Esempio concreto</div>
-            La parola "netiquette" compare per la prima volta nel 1982 nei gruppi di discussione di ARPANET (l'antenato di Internet). Già allora, gli utenti avevano stabilito regole per non offendere e per comunicare in modo chiaro. Oggi le stesse regole si applicano a WhatsApp, Instagram e Teams.
+            <div class="ex-label">💬 Example</div>
+            The word "netiquette" first appeared in 1982 in the discussion groups of ARPANET — the ancestor <em>(antenato)</em> of the Internet. Even then, users had already established rules to avoid offending others and to communicate clearly. Today the same rules apply to WhatsApp, Instagram and Teams.
           </div>
-          <div class="slide-tip">Spiega l'etimologia della parola (network + étiquette) e aggiungi 3–4 regole base con icone.</div>
+          <div class="slide-tip">Explain the origin of the word (network + French "étiquette") and add 3–4 basic rules with icons.</div>
         </div>
       </div>
 
@@ -487,10 +552,10 @@ footer a { color:var(--mint); text-decoration:none; }
             <span class="kw">pause before you post</span><span class="kw">contenuto permanente</span><span class="kw">reputazione online</span><span class="kw">screenshot</span><span class="kw">conseguenze</span>
           </div>
           <div class="example-box">
-            <div class="ex-label">💬 Esempio concreto</div>
-            Nel 2013, una PR manager americana pubblicò uno scherzo in cattivo gusto su Twitter mentre era in aereo. In 11 ore di volo, il tweet era diventato virale e quando atterrò aveva già perso il lavoro. Era una cosa scritta in 30 secondi — con conseguenze permanenti.
+            <div class="ex-label">💬 Example</div>
+            In 2013, an American PR manager posted a tasteless joke <em>(battuta di cattivo gusto)</em> on Twitter while boarding a plane. In 11 hours of flight, the tweet went viral <em>(diventò virale)</em> — and when she landed, she had already lost her job. It took 30 seconds to write. The consequences <em>(le conseguenze)</em> were permanent.
           </div>
-          <div class="slide-tip">Usa le domande del metodo T.H.I.N.K. (True, Helpful, Inspiring, Necessary, Kind) come struttura visiva della slide.</div>
+          <div class="slide-tip">Use the T.H.I.N.K. method (True, Helpful, Inspiring, Necessary, Kind) as the visual structure of the slide.</div>
         </div>
       </div>
 
@@ -519,10 +584,10 @@ footer a { color:var(--mint); text-decoration:none; }
             <span class="kw">GDPR</span><span class="kw">privacy</span><span class="kw">consenso</span><span class="kw">dati personali</span><span class="kw">Garante Privacy</span><span class="kw">personal data</span>
           </div>
           <div class="example-box">
-            <div class="ex-label">💬 Esempio concreto</div>
-            Taggare un compagno in una foto imbarazzante senza chiedergli il permesso viola la sua privacy. Condividere in una chat di classe uno screenshot di una conversazione privata può essere considerato diffamazione. Entrambi i casi possono avere conseguenze legali per chi pubblica.
+            <div class="ex-label">💬 Example</div>
+            Tagging a classmate in an embarrassing photo without asking them is a privacy violation <em>(violazione della privacy)</em>. Sharing a screenshot of a private conversation in a class group chat can be considered defamation <em>(diffamazione)</em>. Both cases can lead to real legal consequences <em>(conseguenze legali)</em> for the person who posts.
           </div>
-          <div class="slide-tip">Inserisci il logo del GDPR e 3 esempi visivi di comportamenti corretti/scorretti (sì/no).</div>
+          <div class="slide-tip">Add the GDPR logo and 3 visual examples of correct vs incorrect behaviour (✅ / ❌ format).</div>
         </div>
       </div>
 
@@ -551,11 +616,12 @@ footer a { color:var(--mint); text-decoration:none; }
             <span class="kw">registro formale</span><span class="kw">CAPS LOCK = urlare</span><span class="kw">abbreviazioni</span><span class="kw">tono tipografico</span><span class="kw">professional register</span>
           </div>
           <div class="example-box">
-            <div class="ex-label">💬 Esempio concreto</div>
-            ❌ <em>"prof xké ho preso questo voto?? È assurdo cmq"</em> — messaggio su Teams al docente.<br>
-            ✅ <em>"Buongiorno Prof. Crespi, avrei piacere di capire la valutazione dell'ultima verifica. Quando posso fissare un appuntamento? Grazie."</em>
+            <div class="ex-label">💬 Example</div>
+            ❌ <em>"prof why did I get this grade?? it's ridiculous btw"</em> — a Teams message to your teacher.<br>
+            ✅ <em>"Good morning, I would like to understand my grade on the last test. When would it be possible to meet? Thank you."</em><br>
+            <span style="font-size:12px;color:var(--muted);">Parole difficili: <em>ridiculous</em> = assurdo · <em>grade</em> = voto · <em>btw</em> = abbreviazione di "by the way" (a proposito)</span>
           </div>
-          <div class="slide-tip">Metti a confronto due versioni dello stesso messaggio (informale vs formale) — è un formato visivo molto efficace.</div>
+          <div class="slide-tip">Compare two versions of the same message (informal vs formal) — a very effective visual format for presentations.</div>
         </div>
       </div>
 
@@ -584,10 +650,10 @@ footer a { color:var(--mint); text-decoration:none; }
             <span class="kw">copyright</span><span class="kw">citazione</span><span class="kw">plagio</span><span class="kw">fonte</span><span class="kw">Creative Commons</span><span class="kw">attribution</span>
           </div>
           <div class="example-box">
-            <div class="ex-label">💬 Esempio concreto</div>
-            Se per la tua slide scarichi una foto da Google Immagini e non la citi, stai usando un'opera altrui senza permesso. Usa invece immagini con licenza libera (Unsplash, Pexels, Pixabay) oppure specifica "Fonte: nome del sito" nella slide.
+            <div class="ex-label">💬 Example</div>
+            If you download a photo from Google Images for your slide and do not credit <em>(citare)</em> it, you are using someone else's work without permission. Use royalty-free <em>(libere da copyright)</em> images instead — from Unsplash, Pexels or Pixabay — and write "Source: [website name]" on your slide.
           </div>
-          <div class="slide-tip">Mostra come si cita correttamente un'immagine e includi i loghi di Unsplash/Pexels come esempi di fonti libere da copyright.</div>
+          <div class="slide-tip">Show how to credit an image correctly and include the Unsplash/Pexels logos as examples of royalty-free image sources.</div>
         </div>
       </div>
 
@@ -616,10 +682,10 @@ footer a { color:var(--mint); text-decoration:none; }
             <span class="kw">dati personali</span><span class="kw">phishing</span><span class="kw">2FA</span><span class="kw">password</span><span class="kw">GDPR</span><span class="kw">identity theft</span>
           </div>
           <div class="example-box">
-            <div class="ex-label">💬 Esempio concreto</div>
-            Ricevi un'email da "PosteItaliane" che ti chiede di cliccare un link per sbloccare il tuo conto. Il link porta a un sito falso identico all'originale. Se inserisci le credenziali, i truffatori le usano per svuotare il tuo conto. Questo è phishing.
+            <div class="ex-label">💬 Example</div>
+            You receive an email from "PosteItaliane" asking you to click a link to unblock <em>(sbloccare)</em> your account. The link leads to a fake website <em>(sito falso)</em> that looks identical to the real one. If you enter your credentials <em>(credenziali = username e password)</em>, the scammers <em>(truffatori)</em> use them to access your account. This is phishing.
           </div>
-          <div class="slide-tip">Usa un'immagine di un'email di phishing (reale, anonimizzata) e indica con frecce i segnali d'allarme da riconoscere.</div>
+          <div class="slide-tip">Use a screenshot of a phishing email (real but anonymised) and use arrows to highlight the warning signs to look out for.</div>
         </div>
       </div>
 
@@ -648,10 +714,10 @@ footer a { color:var(--mint); text-decoration:none; }
             <span class="kw">emoji culturali</span><span class="kw">Unicode</span><span class="kw">comunicazione interculturale</span><span class="kw">malinteso</span><span class="kw">cross-cultural</span>
           </div>
           <div class="example-box">
-            <div class="ex-label">💬 Esempio concreto</div>
-            👍 In Italia = "ok, bravo". In Medio Oriente e Africa occidentale = gesto volgare, offensivo come il dito medio. 🙂 In Occidente = cordialità. In Cina = sorriso sarcastico o di disappunto. La nostra 🤌 in Nord Africa significa "aspetta un attimo".
+            <div class="ex-label">💬 Example</div>
+            👍 In Italy = "ok, well done". In the Middle East and West Africa = a rude, offensive gesture <em>(gesto volgare)</em>, similar to the middle finger in Western culture. 🙂 In Western countries = friendliness. In China = a sarcastic or disapproving smile. The Italian 🤌 in North Africa means "wait a moment" <em>(aspetta un attimo)</em>.
           </div>
-          <div class="slide-tip">Crea una mini-infografica con 3 emoji e i loro significati diversi per culture diverse. Molto visivo e facile da presentare.</div>
+          <div class="slide-tip">Create a mini-infographic with 3 emojis and their different meanings across cultures. Very visual and easy to present.</div>
         </div>
       </div>
 
@@ -680,10 +746,10 @@ footer a { color:var(--mint); text-decoration:none; }
             <span class="kw">digital natives</span><span class="kw">digital immigrants</span><span class="kw">Gen Z</span><span class="kw">Boomers</span><span class="kw">tono tipografico</span><span class="kw">generational gap</span>
           </div>
           <div class="example-box">
-            <div class="ex-label">💬 Esempio concreto</div>
-            Per un Boomer, il punto fermo alla fine di un messaggio è grammatica normale. Per uno Zoomer, lo stesso punto comunica freddezza, rabbia o vuole chiudere la conversazione bruscamente. Il 👍 per un Boomer è un semplice "ok"; per la Gen Z è sbrigativo e quasi offensivo.
+            <div class="ex-label">💬 Example</div>
+            For a Baby Boomer, a full stop at the end of a text message is just normal grammar <em>(grammatica normale)</em>. For a Gen Z, that same full stop communicates coldness or anger. The 👍 emoji? For a Boomer it simply means "ok". For Gen Z it feels dismissive <em>(sbrigativo, quasi offensivo)</em> — almost like a "talk to the hand".
           </div>
-          <div class="slide-tip">Usa la tabella "Boomers vs Gen Z" con 4–5 segnali digitali (punto, maiuscolo, messaggi brevi, 👍) e il loro significato per ogni generazione.</div>
+          <div class="slide-tip">Use a "Boomers vs Gen Z" comparison table with 4–5 digital signals (full stop, CAPS, short messages, 👍) and their meaning for each generation.</div>
         </div>
       </div>
 
@@ -712,10 +778,10 @@ footer a { color:var(--mint); text-decoration:none; }
             <span class="kw">social media rules</span><span class="kw">Instagram</span><span class="kw">TikTok</span><span class="kw">WhatsApp</span><span class="kw">community guidelines</span><span class="kw">immagine online</span>
           </div>
           <div class="example-box">
-            <div class="ex-label">💬 Esempio concreto</div>
-            Mandare messaggi a raffica su WhatsApp a un contatto che non risponde è considerato invadente. Commentare "seguitemi!" su ogni post altrui su Instagram è spam. Postare video su TikTok con musica di sottofondo di cui non hai i diritti può portare alla rimozione del video o alla sospensione dell'account.
+            <div class="ex-label">💬 Example</div>
+            Sending repeated messages on WhatsApp to someone who is not replying is considered intrusive <em>(invadente)</em>. Commenting "follow me!" on every post on Instagram is spam. Posting a TikTok video with copyrighted background music <em>(musica di cui non hai i diritti)</em> can get your video removed or your account suspended <em>(sospeso)</em>.
           </div>
-          <div class="slide-tip">Dedica una sezione a ciascuna piattaforma con 2–3 regole specifiche. Usa i loghi delle app come intestazioni visive.</div>
+          <div class="slide-tip">Dedicate a section to each platform with 2–3 specific rules. Use the app logos as visual headings.</div>
         </div>
       </div>
 
@@ -744,10 +810,10 @@ footer a { color:var(--mint); text-decoration:none; }
             <span class="kw">cyberbullismo</span><span class="kw">online harassment</span><span class="kw">Legge 71/2017</span><span class="kw">segnalazione</span><span class="kw">screenshot</span><span class="kw">blocca e segnala</span>
           </div>
           <div class="example-box">
-            <div class="ex-label">💬 Esempio concreto</div>
-            Un gruppo WhatsApp che esclude deliberatamente un compagno è una forma di cyberbullismo (esclusione sociale). Un profilo Instagram falso creato con le foto di qualcuno per deriderlo è cyberbullismo da impersonificazione. In entrambi i casi: fai uno screenshot, blocca chi ti molesta e segnala alla piattaforma e a un adulto di fiducia.
+            <div class="ex-label">💬 Example</div>
+            A WhatsApp group that deliberately excludes <em>(esclude deliberatamente)</em> a classmate is a form of cyberbullying — social exclusion <em>(esclusione sociale)</em>. A fake Instagram profile created with someone's photos to mock <em>(prendere in giro)</em> them is identity-based cyberbullying. In both cases: take a screenshot <em>(fai uno screenshot)</em>, block the bully and report to the platform and a trusted adult.
           </div>
-          <div class="slide-tip">Usa la formula: "Riconosci → Segnala → Reagisci" come struttura della slide. Aggiungi il numero della Polizia Postale: 800.POLIZIA (800.764.942).</div>
+          <div class="slide-tip">Use the formula "Recognise → Report → React" as the slide structure. Add the Italian Postal Police number: 800.764.942 (freephone, gratuito).</div>
         </div>
       </div>
 
@@ -776,10 +842,10 @@ footer a { color:var(--mint); text-decoration:none; }
             <span class="kw">digital footprint</span><span class="kw">impronta attiva</span><span class="kw">impronta passiva</span><span class="kw">cookie</span><span class="kw">web reputation</span><span class="kw">ego-surfing</span>
           </div>
           <div class="example-box">
-            <div class="ex-label">💬 Esempio concreto</div>
-            Il 75% delle aziende controlla i profili social dei candidati prima di assumere. Una foto pubblicata a 16 anni può ricomparire anni dopo durante un colloquio di lavoro. Cerca il tuo nome su Google ogni tanto: è il primo passo per sapere cosa vedono gli altri di te.
+            <div class="ex-label">💬 Example</div>
+            75% of companies check <em>(controllano)</em> candidates' social media profiles before hiring <em>(assumere)</em>. A photo posted at 16 can come back years later during a job interview <em>(colloquio di lavoro)</em>. Try searching your own name on Google once in a while: it is the first step to knowing what others see when they look you up.
           </div>
-          <div class="slide-tip">Usa il grafico a tre cerchi (Attiva / Passiva / Terze Parti) come immagine principale. È intuitivo e riassume tutto in un colpo d'occhio.</div>
+          <div class="slide-tip">Use a three-circle diagram (Active / Passive / Third-party) as the main image. It is intuitive and summarises everything at a glance.</div>
         </div>
       </div>
 
@@ -808,10 +874,10 @@ footer a { color:var(--mint); text-decoration:none; }
             <span class="kw">fake news</span><span class="kw">fact-checking</span><span class="kw">disinformazione</span><span class="kw">pensiero critico</span><span class="kw">Snopes</span><span class="kw">bufala</span>
           </div>
           <div class="example-box">
-            <div class="ex-label">💬 Esempio concreto</div>
-            In agricoltura circolano spesso fake news sui pesticidi, sugli OGM e sui "superfood miracolosi". Un post virale che dice "l'aglio guarisce il coronavirus" non ha basi scientifiche. Per verificare: cerca la notizia su Agence France-Presse Fact Check, Pagella Politica o FactCheckEU.
+            <div class="ex-label">💬 Example</div>
+            In agriculture, fake news often circulates <em>(circola)</em> about pesticides <em>(pesticidi)</em>, GMOs <em>(OGM)</em> and "miracle superfoods". A viral post claiming "garlic cures <em>(guarisce)</em> COVID-19" has no scientific basis <em>(basi scientifiche)</em>. To verify <em>(verificare)</em>: search the story on AFP Fact Check, Snopes or FactCheckEU before sharing it.
           </div>
-          <div class="slide-tip">Mostra il metodo S.I.F.T. (Stop, Investigate the source, Find better coverage, Trace claims) come guida pratica al fact-checking.</div>
+          <div class="slide-tip">Show the S.I.F.T. method (Stop, Investigate the source, Find better coverage, Trace claims) as a practical fact-checking guide.</div>
         </div>
       </div>
 
@@ -837,15 +903,16 @@ footer a { color:var(--mint); text-decoration:none; }
             </div>
           </div>
           <div class="example-box">
-            <div class="ex-label">💬 Esempio di struttura</div>
+            <div class="ex-label">💬 Example structure</div>
             <strong>We, the Digital Citizens of Class 3A, pledge to:</strong><br>
             1. Think before we post.<br>
             2. Respect others' privacy online.<br>
             3. Check sources before sharing news.<br>
             4. Use appropriate language in every digital context.<br>
-            5. Stand up against cyberbullying.
+            5. Stand up against cyberbullying.<br>
+            <span style="font-size:12px;color:var(--muted);">Parole difficili: <em>pledge</em> = promettiamo solennemente · <em>stand up against</em> = opporsi a, combattere</span>
           </div>
-          <div class="slide-tip">Questa slide viene compilata in diretta durante la lezione. Ogni studente propone un impegno. Il prof seleziona i migliori 5 con la classe e li inserisce nel Padlet. È il momento più collaborativo di tutta l'attività.</div>
+          <div class="slide-tip">This slide is written live during the lesson. Each student suggests one commitment. The class votes on the best 5 and the teacher adds them to the Padlet. It is the most collaborative moment of the whole activity.</div>
         </div>
       </div>
 
@@ -996,23 +1063,24 @@ footer a { color:var(--mint); text-decoration:none; }
 
     <div class="padlet-hero">
       <h2>📌 Come creare e condividere il tuo Padlet</h2>
-      <p>Segui i passi qui sotto. Ogni studente crea il <strong>proprio Padlet individuale</strong> e lo condivide con il prof tramite link.</p>
+      <p>Ogni studente crea il <strong>proprio Padlet individuale</strong> e lo condivide con il prof. Il Padlet rimane <strong>privato</strong>: solo tu e il prof potete vederlo e modificarlo.</p>
     </div>
 
     <div class="warning-box">
-      <div class="w-title">⚠️ Attenzione — Account gratuito</div>
-      Il piano gratuito di Padlet permette di creare <strong>massimo 3 Padlet</strong>. Se ne hai già 3, devi eliminarne uno o usare un altro account. Usa la tua email scolastica per registrarti.
+      <div class="w-title">⚠️ Account gratuito — limite di 3 Padlet</div>
+      Il piano gratuito di Padlet permette di creare <strong>massimo 3 Padlet attivi</strong>. Se ne hai già 3, eliminane uno prima di iniziare. Registrati con la tua email scolastica (es. nome.cognome@iismendel.edu.it).
     </div>
 
-    <h3 style="font-family:'Playfair Display',serif; color:var(--forest); font-size:18px; margin-bottom:16px;">PARTE 1 — Crea il tuo Padlet</h3>
+    <!-- ─── PARTE 1 ─── -->
+    <h3 class="guide-section-title">PARTE 1 — Crea il tuo Padlet</h3>
 
     <div class="guide-steps">
 
       <div class="step-card">
         <div class="step-num">1</div>
         <div class="step-content">
-          <h4>Vai su Padlet e crea un account</h4>
-          <p>Apri il browser e vai su <strong>padlet.com</strong>. Clicca su <span class="code-note">Registrati</span> in alto a destra. Puoi registrarti con la <strong>tua email scolastica</strong> o con Google. Se hai già un account, fai login.</p>
+          <h4>Crea un account su Padlet</h4>
+          <p>Apri il browser e vai su <strong>padlet.com</strong>. Clicca su <strong>Registrati</strong> in alto a destra e usa la tua <strong>email scolastica</strong> o il tuo account Google. Se hai già un account, fai login direttamente.</p>
         </div>
       </div>
 
@@ -1020,77 +1088,197 @@ footer a { color:var(--mint); text-decoration:none; }
         <div class="step-num">2</div>
         <div class="step-content">
           <h4>Crea un nuovo Padlet</h4>
-          <p>Dalla tua dashboard clicca sul pulsante <span class="code-note">+ Crea</span> o <span class="code-note">Make a Padlet</span>. Ti apparirà una schermata con i formati disponibili.</p>
+          <p>Dalla tua dashboard clicca su <strong>+ Crea</strong> (o <strong>Make a Padlet</strong>). Si apre una schermata con tutti i formati disponibili.</p>
         </div>
       </div>
 
       <div class="step-card">
         <div class="step-num">3</div>
         <div class="step-content">
-          <h4>Scegli il formato "Slideshow"</h4>
-          <p>Tra i formati disponibili, seleziona <span class="code-note">Slideshow</span> (ha l'icona di un pannello con frecce). Questo formato trasforma le card in slide navigabili, perfetto per la presentazione in classe.</p>
-          <p style="margin-top:6px; color:var(--muted);">Gli altri formati (Wall, Grid, ecc.) vanno bene lo stesso — il prof li può leggere — ma Slideshow è il più adatto per presentare.</p>
+          <h4>Scegli il formato <strong>Slideshow</strong></h4>
+          <p>Tra i formati disponibili cerca e seleziona <strong>Slideshow</strong> — ha l'icona di pannelli con frecce. Le card diventano slide navigabili: perfetto per presentare in classe.</p>
+          <p style="margin-top:6px;color:var(--muted);font-size:13px;">I formati Wall e Grid vanno bene lo stesso se non trovi Slideshow, ma quest'ultimo è il più adatto per presentare.</p>
         </div>
       </div>
 
       <div class="step-card">
         <div class="step-num">4</div>
         <div class="step-content">
-          <h4>Dai un titolo al tuo Padlet</h4>
-          <p>Clicca sull'icona <span class="code-note">⚙️ Impostazioni</span> (Settings) in alto a destra. Inserisci come titolo:</p>
-          <p style="margin-top:6px; background:#f0f7f2; padding:8px 12px; border-radius:6px; font-style:italic; font-weight:600; color:var(--forest);">"Digital Citizens' Handbook – [Nome Cognome] – 3A"</p>
-          <p style="margin-top:6px;">Puoi aggiungere anche una breve descrizione: <em>"Slide di Ed. Civica sulla Cittadinanza Digitale."</em></p>
+          <h4>Dai un titolo al Padlet</h4>
+          <p>Clicca sull'icona <strong>⚙️ Impostazioni</strong> in alto. Nel campo titolo scrivi esattamente:</p>
+          <div class="title-example">"Digital Citizens' Handbook – [Nome Cognome] – 3A"</div>
+          <p style="margin-top:8px;">Nel campo descrizione puoi scrivere: <em>"Slide di Ed. Civica sulla Cittadinanza Digitale — IIS Mendel 2025/2026."</em></p>
         </div>
       </div>
 
       <div class="step-card">
         <div class="step-num">5</div>
         <div class="step-content">
-          <h4>Aggiungi la tua slide</h4>
-          <p>Clicca sul pulsante <span class="code-note">+</span> (in basso a destra o al centro del Padlet vuoto) per aggiungere una nuova card. Si aprirà un pannello laterale dove puoi:</p>
-          <ul>
-            <li>Inserire il <strong>Titolo</strong> della slide (usa il titolo in inglese della tua slide)</li>
-            <li>Scrivere il <strong>testo</strong> nel corpo: 4–6 punti, in inglese, parole tue</li>
-            <li>Cliccare sull'icona <span class="code-note">🖼️</span> per aggiungere un'immagine (carica dal dispositivo, cerca sul web integrato o usa un URL)</li>
-            <li>Aggiungere eventualmente un link a una fonte</li>
-          </ul>
-          <p style="margin-top:8px;">Quando hai finito, clicca <span class="code-note">Pubblica</span> o <span class="code-note">Salva</span>.</p>
+          <h4>Imposta la privacy su <strong>Privato</strong></h4>
+          <p>Sempre nelle Impostazioni, vai alla sezione <strong>Privacy</strong> e seleziona <strong>"Privato"</strong> (Private) oppure <strong>"Solo persone invitate"</strong> (Only people I invite). <strong>Non scegliere "Pubblico" o "Chiunque con il link"</strong> — il tuo Padlet deve essere visibile solo a te e al prof.</p>
+          <div class="privacy-notice">
+            🔒 <strong>Importante:</strong> mantenere il Padlet privato protegge il tuo lavoro. Solo il prof riceverà accesso, tramite invito email nel passo successivo.
+          </div>
         </div>
       </div>
 
       <div class="step-card">
         <div class="step-num">6</div>
         <div class="step-content">
-          <h4>Modifica la card se necessario</h4>
-          <p>Puoi modificare la tua card in qualsiasi momento: passa con il mouse sopra la card → clicca sull'icona <span class="code-note">✏️ Matita</span> oppure sui <span class="code-note">⋮ tre puntini</span> → Modifica. Le modifiche vengono salvate automaticamente.</p>
+          <h4>Aggiungi la tua slide (card)</h4>
+          <p>Clicca sul pulsante <strong>+</strong> per aggiungere una nuova card. Si apre un pannello dove inserisci:</p>
+          <ul>
+            <li>Il <strong>Titolo</strong> in inglese (quello della tua slide)</li>
+            <li>Il <strong>testo</strong>: 4–6 punti in inglese, con parole tue</li>
+            <li>Un <strong>allegato</strong> multimediale (vedi Parte 3 qui sotto per i dettagli)</li>
+          </ul>
+          <p style="margin-top:8px;">Quando hai finito, clicca <strong>Pubblica</strong> o <strong>Salva</strong>.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">7</div>
+        <div class="step-content">
+          <h4>Modifica la card quando vuoi</h4>
+          <p>Passa il mouse sopra la card → clicca sull'icona <strong>✏️ Matita</strong> o sui <strong>⋮ tre puntini</strong> → seleziona <strong>Modifica</strong>. Le modifiche vengono salvate automaticamente in tempo reale.</p>
         </div>
       </div>
 
     </div><!-- /guide-steps -->
 
-    <h3 style="font-family:'Playfair Display',serif; color:var(--forest); font-size:18px; margin:28px 0 16px;">PARTE 2 — Condividi il link con il Prof</h3>
+    <!-- ─── PARTE 2 ─── -->
+    <h3 class="guide-section-title">PARTE 2 — Condividi il Padlet con il Prof</h3>
 
     <div class="share-box">
-      <h4>Come ottenere il link e inviarlo</h4>
+      <h4>Invita il prof come collaboratore (con diritti di modifica)</h4>
       <ol class="share-steps">
         <li data-n="1">Clicca sul pulsante <strong>Condividi</strong> (Share) — è l'icona con la freccia in alto a destra nel tuo Padlet.</li>
-        <li data-n="2">Nella sezione <strong>"Privacy"</strong>, scegli <em>"Chiunque abbia il link può visualizzare"</em> (Anyone with the link can view). Questo permette al prof di aprirlo senza fare login.</li>
-        <li data-n="3">Clicca su <strong>"Copia link"</strong> (Copy link). Il link viene copiato negli appunti del dispositivo.</li>
-        <li data-n="4">Vai su <strong>Google Classroom</strong> (o il canale Teams della classe), crea un nuovo commento o consegna il link nell'attività indicata dal prof, e incolla il link con <em>Ctrl+V</em> (o <em>Cmd+V</em> su Mac).</li>
-        <li data-n="5">Controlla che il link funzioni: aprilo in una scheda <strong>in incognito</strong> nel browser. Se si apre il Padlet senza fare login, è tutto corretto.</li>
+        <li data-n="2">Nella sezione <strong>"Invita persone"</strong> (Invite people), inserisci l'indirizzo email del prof: <strong>m.crespi@iismendel.edu.it</strong> (o quello che ti verrà comunicato in classe).</li>
+        <li data-n="3">Nel menu a tendina accanto all'email, scegli il ruolo <strong>"Può modificare"</strong> (Can edit) — in questo modo il prof può visualizzare il tuo Padlet, lasciare commenti e apportare correzioni.</li>
+        <li data-n="4">Clicca <strong>Invia invito</strong>. Il prof riceve un'email con il link diretto al tuo Padlet.</li>
+        <li data-n="5">Vai su <strong>Google Classroom</strong>, apri l'attività di Ed. Civica e nella sezione "Il tuo lavoro" incolla anche l'<strong>URL della pagina</strong> del tuo Padlet (lo trovi nella barra dell'indirizzo del browser). Clicca <strong>Consegna</strong>.</li>
       </ol>
     </div>
 
-    <div style="margin-top:20px; background:#f2f8f4; border:1.5px solid var(--mint); border-radius:10px; padding:18px 20px;">
-      <h4 style="font-weight:700; color:var(--forest); margin-bottom:10px;">📋 Checklist prima di consegnare</h4>
-      <ul style="padding-left:18px; font-size:13.5px; line-height:2;">
-        <li>Il Padlet ha il titolo con il tuo nome e la classe</li>
-        <li>La slide (card) ha un titolo in inglese visibile</li>
-        <li>Il testo è in inglese, scritto con parole tue (no copia-incolla)</li>
-        <li>Hai almeno un'immagine pertinente</li>
-        <li>Hai indicato la fonte dell'immagine o hai usato un'immagine libera</li>
-        <li>Il link condiviso si apre senza login (test in incognito)</li>
-        <li>Hai inviato il link al prof su Google Classroom entro la fine della Lezione 1</li>
+    <!-- ─── PARTE 3 ─── -->
+    <h3 class="guide-section-title" style="margin-top:32px;">PARTE 3 — Cosa puoi aggiungere alla slide</h3>
+
+    <p style="font-size:14px; color:var(--muted); margin-bottom:16px;">Clicca sul pulsante <strong>+</strong> della card per aprire il pannello di caricamento. Ecco tutto quello che puoi inserire:</p>
+
+    <div class="media-grid">
+
+      <div class="media-card">
+        <div class="media-icon">🖼️</div>
+        <div class="media-name">Foto e immagini</div>
+        <div class="media-how">
+          <strong>Come fare:</strong> clicca sull'icona immagine → scegli
+          <em>Carica file</em> (dal tuo dispositivo) oppure <em>Cerca sul web</em>
+          (motore integrato Padlet). Usa immagini libere da copyright:
+          <a href="https://unsplash.com" target="_blank">Unsplash</a> o
+          <a href="https://www.pexels.com/it-it/" target="_blank">Pexels</a>.
+          Scrivi "Fonte: [nome sito]" nel corpo del testo.
+        </div>
+      </div>
+
+      <div class="media-card">
+        <div class="media-icon">🎬</div>
+        <div class="media-name">Video YouTube</div>
+        <div class="media-how">
+          <strong>Come fare:</strong> vai su YouTube, copia l'URL del video dalla
+          barra dell'indirizzo. Nel pannello della card clicca sull'icona
+          <em>Link</em> e incolla l'URL. Padlet lo incorpora automaticamente
+          come player video. Ottimo per clip su netiquette, cyberbullismo o
+          digital footprint.
+        </div>
+      </div>
+
+      <div class="media-card">
+        <div class="media-icon">🔗</div>
+        <div class="media-name">Link a siti web</div>
+        <div class="media-how">
+          <strong>Come fare:</strong> copia l'URL di qualsiasi pagina web
+          (es. un articolo, una fonte istituzionale). Clicca sull'icona
+          <em>Link</em> nella card e incollalo. Padlet mostra un'anteprima
+          automatica con titolo e immagine della pagina. Ideale per le
+          fonti della tab "Fonti Istituzionali".
+        </div>
+      </div>
+
+      <div class="media-card">
+        <div class="media-icon">📚</div>
+        <div class="media-name">Libri e titoli bibliografici</div>
+        <div class="media-how">
+          <strong>Come fare:</strong> cerca il libro su
+          <a href="https://books.google.it" target="_blank">Google Books</a>
+          o <a href="https://openlibrary.org" target="_blank">Open Library</a>
+          e incolla il link nella card. In alternativa, scrivi nel corpo del
+          testo la citazione: <em>Autore, Titolo, Anno</em>. Puoi aggiungere
+          la copertina come immagine separata.
+        </div>
+      </div>
+
+      <div class="media-card">
+        <div class="media-icon">🎵</div>
+        <div class="media-name">Audio e podcast</div>
+        <div class="media-how">
+          <strong>Come fare:</strong> carica un file audio dal tuo dispositivo
+          (formati MP3, WAV, M4A) tramite l'icona <em>Carica file</em>.
+          In alternativa, incolla il link di un episodio Spotify o di un
+          podcast web: Padlet crea un player incorporato. Utile per
+          interviste o clip audio su cittadinanza digitale.
+        </div>
+      </div>
+
+      <div class="media-card">
+        <div class="media-icon">📄</div>
+        <div class="media-name">Documenti PDF</div>
+        <div class="media-how">
+          <strong>Come fare:</strong> clicca sull'icona <em>Carica file</em>
+          e seleziona un PDF dal dispositivo. Padlet lo mostra come
+          anteprima sfogliabile direttamente nella card. Utile per caricare
+          le schede didattica di Feltrinelli Scuola o le guide del Garante
+          Privacy scaricate dalla tab Fonti.
+        </div>
+      </div>
+
+      <div class="media-card">
+        <div class="media-icon">📸</div>
+        <div class="media-name">Foto dalla fotocamera</div>
+        <div class="media-how">
+          <strong>Come fare (da smartphone o tablet):</strong> clicca
+          sull'icona <em>Fotocamera</em> nella card. Si apre direttamente
+          la fotocamera del dispositivo: scatta e la foto viene caricata
+          automaticamente. Utile se vuoi fotografare qualcosa di fisico
+          (es. una pubblicità, un cartello) come esempio per la slide.
+        </div>
+      </div>
+
+      <div class="media-card">
+        <div class="media-icon">🗺️</div>
+        <div class="media-name">Posizione / Mappa</div>
+        <div class="media-how">
+          <strong>Come fare:</strong> clicca sull'icona <em>Posizione</em>
+          (Location) e cerca un luogo nel campo di ricerca. Padlet inserisce
+          una mappa interattiva di Google Maps nella card. Utile per la
+          slide sulle differenze culturali (es. mostrare dove certe emoji
+          hanno significati diversi).
+        </div>
+      </div>
+
+    </div><!-- /media-grid -->
+
+    <!-- ─── CHECKLIST ─── -->
+    <div class="checklist-box">
+      <h4>📋 Checklist finale prima di consegnare</h4>
+      <ul>
+        <li>Il Padlet ha il titolo corretto con nome, cognome e classe</li>
+        <li>La privacy è impostata su <strong>Privato</strong> (non pubblico)</li>
+        <li>Hai invitato il prof con il ruolo <strong>"Può modificare"</strong></li>
+        <li>La card ha un titolo in inglese ben visibile</li>
+        <li>Il testo è in inglese, scritto con parole tue (no copia-incolla da Wikipedia)</li>
+        <li>Hai almeno <strong>un elemento multimediale</strong> (immagine, video o link)</li>
+        <li>Hai indicato la fonte dell'immagine o hai usato Unsplash / Pexels</li>
+        <li>Hai incollato il link del Padlet anche su <strong>Google Classroom</strong></li>
       </ul>
     </div>
 
