@@ -313,6 +313,71 @@ footer strong { color:var(--mint); }
 footer a { color:var(--mint); text-decoration:none; }
 
 
+
+/* ── PHRASES TAB ── */
+.phrase-section { margin-bottom:32px; }
+.phrase-cat {
+  font-family:'Playfair Display',serif; font-size:17px; font-weight:700;
+  color:var(--forest); margin-bottom:14px;
+  padding:10px 16px; border-radius:8px;
+  background:linear-gradient(90deg, rgba(74,124,89,.12), transparent);
+  border-left:4px solid var(--sage);
+}
+.phrase-grid {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:10px;
+}
+.phrase-card {
+  background:#fff; border:1.5px solid var(--warm);
+  border-radius:10px; padding:14px 16px;
+  box-shadow:0 2px 6px rgba(0,0,0,.04);
+  transition:.2s;
+}
+.phrase-card:hover { border-color:var(--mint); box-shadow:0 4px 12px rgba(0,0,0,.08); }
+.phrase-en {
+  font-size:14px; font-weight:600; color:var(--forest);
+  line-height:1.55; margin-bottom:6px;
+}
+.phrase-it {
+  font-size:12.5px; color:var(--muted); font-style:italic; line-height:1.5;
+  border-top:1px solid var(--warm); padding-top:6px; margin-top:4px;
+}
+.blank {
+  display:inline-block; min-width:60px; border-bottom:2px solid var(--accent);
+  color:var(--accent); font-style:italic; font-weight:400;
+}
+
+/* Connectors grid */
+.connector-grid {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:8px;
+}
+.connector-card {
+  background:#fff; border:1.5px solid var(--warm);
+  border-radius:8px; padding:10px 12px; text-align:center;
+  font-size:13px; line-height:1.5;
+}
+.connector-card strong { color:var(--forest); display:block; }
+.connector-card em { color:var(--sage); font-size:11.5px; }
+
+/* Position grid */
+.position-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:4px; max-width:420px;
+  border:2px solid var(--warm); border-radius:10px; overflow:hidden;
+}
+.pos-card {
+  background:#f8f8f8; border:1px solid var(--warm);
+  padding:12px 8px; text-align:center; font-size:12px;
+  font-weight:600; color:var(--forest); line-height:1.4;
+}
+.pos-card em { font-size:11px; color:var(--sage); font-style:normal; display:block; }
+.pos-cc { background:rgba(74,124,89,.12); }
+
+@media(max-width:600px){
+  .phrase-grid { grid-template-columns:1fr; }
+  .connector-grid { grid-template-columns:repeat(2,1fr); }
+}
+
 /* ── TECHNICAL GLOSSARY TAB ── */
 .alpha-index {
   display:flex; flex-wrap:wrap; gap:6px;
@@ -477,6 +542,7 @@ em.en-sub {
     <div class="nav-links">
       <a href="#glossario">Glossario</a>
       <a href="#termini">Termini</a>
+      <a href="#frasi">Frasi</a>
       <a href="#fonti">Fonti</a>
       <a href="#padlet">Guida Padlet</a>
       <a href="https://padlet.com" target="_blank" class="nav-padlet-btn">📌 Apri Padlet</a>
@@ -502,6 +568,7 @@ em.en-sub {
   <div class="tab-nav" id="glossario">
     <button class="tab-btn active" data-tab="glossario">📖 Glossario delle 15 slide</button>
     <button class="tab-btn" data-tab="termini" id="termini-tab-btn">🔤 Glossario Tecnico</button>
+    <button class="tab-btn" data-tab="frasi" id="frasi-tab-btn">🗣️ Frasi per l'Esposizione</button>
     <button class="tab-btn" data-tab="fonti" id="fonti-tab-btn">🏛️ Fonti istituzionali</button>
     <button class="tab-btn" data-tab="padlet" id="padlet-tab-btn">🎯 Guida Padlet</button>
   </div>
@@ -1525,6 +1592,311 @@ em.en-sub {
   </div><!-- /tab-termini -->
 
   <!-- ══════════════════════════════════
+       TAB — FRASI PER L'ESPOSIZIONE
+  ══════════════════════════════════ -->
+  <div class="tab-panel" id="tab-frasi">
+
+    <div class="intro-box">
+      Queste frasi ti aiutano a <strong>presentare il tuo Padlet in inglese</strong> durante l'interrogazione. Impara quelle che si adattano alla tua slide e allenati a usarle ad alta voce prima della lezione.
+    </div>
+
+    <!-- ── CATEGORY 1 ── -->
+    <div class="phrase-section">
+      <h3 class="phrase-cat">🎯 Introducing your slide</h3>
+      <div class="phrase-grid">
+
+        <div class="phrase-card">
+          <div class="phrase-en">My slide is about <span class="blank">___</span>, which is slide number <span class="blank">___</span> of our class Padlet.</div>
+          <div class="phrase-it">La mia slide parla di ___, ed è la numero ___ del Padlet della classe.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">I chose this topic because I think it fits the theme of digital citizenship very well.</div>
+          <div class="phrase-it">Ho scelto questo argomento perché penso che si adatti molto bene al tema della cittadinanza digitale.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">I chose this topic because it is something that affects us every day as young people online.</div>
+          <div class="phrase-it">Ho scelto questo argomento perché ci riguarda ogni giorno come giovani utenti del web.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">The title of my slide is "<span class="blank">___</span>" and it deals with the concept of <span class="blank">___</span>.</div>
+          <div class="phrase-it">Il titolo della mia slide è "___" e tratta il concetto di ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">Today I am going to talk to you about <span class="blank">___</span>. I will explain what it means, give you an example and describe the image I chose.</div>
+          <div class="phrase-it">Oggi vi parlerò di ___. Spiegherò cosa significa, darò un esempio e descriverò l'immagine scelta.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">Before I start, let me ask you a question: have you ever <span class="blank">___</span>? That is exactly what my slide is about.</div>
+          <div class="phrase-it">Prima di iniziare, vi faccio una domanda: avete mai ___? È esattamente di questo che parla la mia slide.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── CATEGORY 2 ── -->
+    <div class="phrase-section">
+      <h3 class="phrase-cat">📖 Defining a term</h3>
+      <div class="phrase-grid">
+
+        <div class="phrase-card">
+          <div class="phrase-en"><span class="blank">___</span> is defined as the <span class="blank">___</span> that <span class="blank">___</span>.</div>
+          <div class="phrase-it">___ è definito/a come il/la ___ che ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">The term "<span class="blank">___</span>" refers to the idea that <span class="blank">___</span>.</div>
+          <div class="phrase-it">Il termine "___ " si riferisce all'idea che ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">In simple words, <span class="blank">___</span> means <span class="blank">___</span>.</div>
+          <div class="phrase-it">In parole semplici, ___ significa ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">The word "<span class="blank">___</span>" comes from <span class="blank">___</span> and was first used in <span class="blank">___</span>.</div>
+          <div class="phrase-it">La parola "___ " deriva da ___ ed è stata usata per la prima volta nel ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">According to the EU / Italian law / experts, <span class="blank">___</span> is <span class="blank">___</span>.</div>
+          <div class="phrase-it">Secondo l'UE / la legge italiana / gli esperti, ___ è ___.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── CATEGORY 3 ── -->
+    <div class="phrase-section">
+      <h3 class="phrase-cat">💡 Giving examples</h3>
+      <div class="phrase-grid">
+
+        <div class="phrase-card">
+          <div class="phrase-en">For example, imagine that <span class="blank">___</span>. This is a typical case of <span class="blank">___</span>.</div>
+          <div class="phrase-it">Per esempio, immaginate che ___. Questo è un caso tipico di ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">A real-life example of this is <span class="blank">___</span>, which happened in <span class="blank">___</span>.</div>
+          <div class="phrase-it">Un esempio reale di questo è ___, avvenuto nel ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">Think about it this way: if you <span class="blank">___</span>, that is exactly what <span class="blank">___</span> means.</div>
+          <div class="phrase-it">Pensateci così: se ___, è esattamente quello che significa ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">This can happen to anyone. For instance, <span class="blank">___</span>.</div>
+          <div class="phrase-it">Può capitare a chiunque. Per esempio, ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">To make this clearer, let me give you a concrete example from everyday life: <span class="blank">___</span>.</div>
+          <div class="phrase-it">Per essere più chiari, vi do un esempio concreto dalla vita quotidiana: ___.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── CATEGORY 4 ── -->
+    <div class="phrase-section">
+      <h3 class="phrase-cat">🖼️ Describing an image</h3>
+      <div class="phrase-grid">
+
+        <div class="phrase-card">
+          <div class="phrase-en">In this image we can see <span class="blank">___</span>.</div>
+          <div class="phrase-it">In quest'immagine possiamo vedere ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">In the top left corner there is <span class="blank">___</span>, which represents <span class="blank">___</span>.</div>
+          <div class="phrase-it">Nell'angolo in alto a sinistra c'è ___, che rappresenta ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">In the bottom right corner you can see <span class="blank">___</span>.</div>
+          <div class="phrase-it">Nell'angolo in basso a destra si vede ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">In the centre of the image there is <span class="blank">___</span>, which symbolises <span class="blank">___</span>.</div>
+          <div class="phrase-it">Al centro dell'immagine c'è ___, che simboleggia ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">On the left side we can see <span class="blank">___</span>, while on the right side there is <span class="blank">___</span>.</div>
+          <div class="phrase-it">Sul lato sinistro vediamo ___, mentre sul lato destro c'è ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">The background of the image shows <span class="blank">___</span>, which gives the feeling of <span class="blank">___</span>.</div>
+          <div class="phrase-it">Lo sfondo dell'immagine mostra ___, che dà la sensazione di ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">I chose this image because it clearly shows <span class="blank">___</span> and it immediately communicates the idea of <span class="blank">___</span>.</div>
+          <div class="phrase-it">Ho scelto quest'immagine perché mostra chiaramente ___ e comunica immediatamente l'idea di ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">As you can see in the image, <span class="blank">___</span>. This is a good visual example of <span class="blank">___</span>.</div>
+          <div class="phrase-it">Come potete vedere nell'immagine, ___. Questo è un buon esempio visivo di ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">The colours used in this image are <span class="blank">___</span>, which suggest <span class="blank">___</span>.</div>
+          <div class="phrase-it">I colori usati in quest'immagine sono ___, che suggeriscono ___.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── CATEGORY 5 ── -->
+    <div class="phrase-section">
+      <h3 class="phrase-cat">🔗 Linking ideas and making points</h3>
+      <div class="phrase-grid">
+
+        <div class="phrase-card">
+          <div class="phrase-en">First of all, <span class="blank">___</span>. In addition to this, <span class="blank">___</span>. Finally, <span class="blank">___</span>.</div>
+          <div class="phrase-it">Prima di tutto, ___. Inoltre, ___. Infine, ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">This is important because <span class="blank">___</span>.</div>
+          <div class="phrase-it">Questo è importante perché ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">On one hand, <span class="blank">___</span>. On the other hand, <span class="blank">___</span>.</div>
+          <div class="phrase-it">Da un lato, ___. Dall'altro lato, ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">This connects to what my classmate said about <span class="blank">___</span>, because <span class="blank">___</span>.</div>
+          <div class="phrase-it">Questo si collega a quello che ha detto il mio compagno/la mia compagna su ___, perché ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">As a result of <span class="blank">___</span>, we can see that <span class="blank">___</span>.</div>
+          <div class="phrase-it">Come risultato di ___, possiamo vedere che ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">This is especially relevant for us as future agricultural technicians, because <span class="blank">___</span>.</div>
+          <div class="phrase-it">Questo è particolarmente rilevante per noi come futuri periti agrari, perché ___.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── CATEGORY 6 ── -->
+    <div class="phrase-section">
+      <h3 class="phrase-cat">💬 Expressing opinions and reactions</h3>
+      <div class="phrase-grid">
+
+        <div class="phrase-card">
+          <div class="phrase-en">In my opinion, <span class="blank">___</span> is one of the most important issues in digital communication today.</div>
+          <div class="phrase-it">A mio avviso, ___ è uno dei problemi più importanti nella comunicazione digitale oggi.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">I personally think that <span class="blank">___</span>, because <span class="blank">___</span>.</div>
+          <div class="phrase-it">Personalmente penso che ___, perché ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">What surprised me while researching this topic was <span class="blank">___</span>.</div>
+          <div class="phrase-it">Quello che mi ha sorpreso mentre ricercavo questo argomento è stato ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">I found this topic interesting because <span class="blank">___</span>. I had never thought about <span class="blank">___</span> before.</div>
+          <div class="phrase-it">Ho trovato questo argomento interessante perché ___. Non avevo mai pensato a ___ prima d'ora.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── CATEGORY 7 ── -->
+    <div class="phrase-section">
+      <h3 class="phrase-cat">✅ Concluding and inviting questions</h3>
+      <div class="phrase-grid">
+
+        <div class="phrase-card">
+          <div class="phrase-en">To sum up, <span class="blank">___</span> is a key concept in digital citizenship because <span class="blank">___</span>.</div>
+          <div class="phrase-it">Per riassumere, ___ è un concetto chiave della cittadinanza digitale perché ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">In conclusion, I would say that <span class="blank">___</span>. The main message of my slide is <span class="blank">___</span>.</div>
+          <div class="phrase-it">In conclusione, direi che ___. Il messaggio principale della mia slide è ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">The most important thing to remember from my slide is <span class="blank">___</span>.</div>
+          <div class="phrase-it">La cosa più importante da ricordare della mia slide è ___.</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">Thank you for listening. Does anyone have any questions about <span class="blank">___</span>?</div>
+          <div class="phrase-it">Grazie per l'attenzione. Qualcuno ha domande su ___?</div>
+        </div>
+
+        <div class="phrase-card">
+          <div class="phrase-en">If I could give one piece of advice based on what I learned, it would be: <span class="blank">___</span>.</div>
+          <div class="phrase-it">Se potessi dare un consiglio basato su quello che ho imparato, sarebbe: ___.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── USEFUL CONNECTORS ── -->
+    <div class="phrase-section">
+      <h3 class="phrase-cat">⚡ Quick connectors — parole di collegamento</h3>
+      <div class="connector-grid">
+        <div class="connector-card"><strong>First of all</strong><br><em>Prima di tutto</em></div>
+        <div class="connector-card"><strong>Then / Next</strong><br><em>Poi / Dopo</em></div>
+        <div class="connector-card"><strong>In addition</strong><br><em>Inoltre</em></div>
+        <div class="connector-card"><strong>However</strong><br><em>Tuttavia / Però</em></div>
+        <div class="connector-card"><strong>On the other hand</strong><br><em>D'altro canto</em></div>
+        <div class="connector-card"><strong>For example</strong><br><em>Per esempio</em></div>
+        <div class="connector-card"><strong>As a result</strong><br><em>Di conseguenza</em></div>
+        <div class="connector-card"><strong>In fact</strong><br><em>Infatti</em></div>
+        <div class="connector-card"><strong>In particular</strong><br><em>In particolare</em></div>
+        <div class="connector-card"><strong>Above all</strong><br><em>Soprattutto</em></div>
+        <div class="connector-card"><strong>In conclusion</strong><br><em>In conclusione</em></div>
+        <div class="connector-card"><strong>To sum up</strong><br><em>Per riassumere</em></div>
+      </div>
+    </div>
+
+    <!-- ── IMAGE POSITION VOCAB ── -->
+    <div class="phrase-section">
+      <h3 class="phrase-cat">📐 Image positions — Come descrivere la posizione</h3>
+      <div class="position-grid">
+        <div class="pos-card pos-tl">top left<br><em>in alto a sinistra</em></div>
+        <div class="pos-card pos-tc">top centre<br><em>in alto al centro</em></div>
+        <div class="pos-card pos-tr">top right<br><em>in alto a destra</em></div>
+        <div class="pos-card pos-cl">centre left<br><em>a sinistra al centro</em></div>
+        <div class="pos-card pos-cc">centre<br><em>al centro</em></div>
+        <div class="pos-card pos-cr">centre right<br><em>a destra al centro</em></div>
+        <div class="pos-card pos-bl">bottom left<br><em>in basso a sinistra</em></div>
+        <div class="pos-card pos-bc">bottom centre<br><em>in basso al centro</em></div>
+        <div class="pos-card pos-br">bottom right<br><em>in basso a destra</em></div>
+      </div>
+      <div style="margin-top:12px; font-size:13px; color:var(--muted);">
+        Altri termini utili: <strong>in the foreground</strong> (in primo piano) · <strong>in the background</strong> (sullo sfondo) · <strong>on the left/right side</strong> (sul lato sinistro/destro) · <strong>next to</strong> (accanto a) · <strong>below</strong> (sotto) · <strong>above</strong> (sopra)
+      </div>
+    </div>
+
+  </div><!-- /tab-frasi -->
+
+  <!-- ══════════════════════════════════
        TAB 2 — FONTI ISTITUZIONALI
   ══════════════════════════════════ -->
   <div class="tab-panel" id="tab-fonti">
@@ -1896,6 +2268,13 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 });
 
 /* Allow nav hash links to trigger tabs */
+document.querySelectorAll('a[href="#frasi"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector('[data-tab="frasi"]').click();
+    document.querySelector('.tab-container').scrollIntoView({behavior:'smooth'});
+  });
+});
 document.querySelectorAll('a[href="#termini"]').forEach(a => {
   a.addEventListener('click', e => {
     e.preventDefault();
