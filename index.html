@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cittadinanza Digitale – Materiali per la classe 3ª | IIS Mendel</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & ROOT ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --forest:   #1a3a2a;
+  --forest2:  #234d38;
+  --sage:     #4a7c59;
+  --sage-lt:  #6a9e77;
+  --mint:     #a8c5b0;
+  --cream:    #f7f3ec;
+  --warm:     #e6dfd3;
+  --accent:   #c17f3a;
+  --accent-lt:#e09a50;
+  --text:     #2a2a2a;
+  --muted:    #666;
+  --white:    #ffffff;
+  --blue-inst:#1a5276;
+  --blue-lt:  #d4e6f1;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--text); font-size:15px; line-height:1.65; }
+
+/* ── NAV ── */
+.topnav {
+  background:var(--forest);
+  padding:10px 0;
+  position:sticky; top:0; z-index:100;
+  border-bottom:2px solid var(--sage);
+}
+.topnav-inner {
+  max-width:1000px; margin:0 auto; padding:0 24px;
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+}
+.nav-brand { color:var(--mint); font-weight:600; font-size:13px; letter-spacing:.5px; }
+.nav-links { display:flex; gap:6px; flex-wrap:wrap; }
+.nav-links a {
+  color:rgba(255,255,255,.7); font-size:12px; padding:5px 10px;
+  border-radius:4px; text-decoration:none; transition:.2s;
+}
+.nav-links a:hover { background:var(--forest2); color:var(--mint); }
+.nav-padlet-btn {
+  background:var(--accent); color:#fff !important; font-weight:600 !important;
+  border-radius:20px !important; padding:6px 14px !important; font-size:12px !important;
+}
+.nav-padlet-btn:hover { background:var(--accent-lt) !important; }
+
+/* ── HERO ── */
+.hero {
+  background:var(--forest);
+  padding:54px 24px 48px;
+  text-align:center;
+  position:relative; overflow:hidden;
+}
+.hero::before {
+  content:'🌿 🍃 🌱 🍃 🌿 🌱 🍃 🌿 🌱 🍃 🌿 🌿 🍃 🌱 🍃 🌿 🌱';
+  position:absolute; top:0; left:0; right:0;
+  font-size:13px; letter-spacing:6px; opacity:.18; padding:10px;
+  white-space:nowrap; overflow:hidden;
+}
+.hero-tag {
+  display:inline-block; background:var(--accent); color:#fff;
+  font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase;
+  padding:4px 14px; border-radius:20px; margin-bottom:18px;
+}
+.hero h1 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,5vw,46px);
+  color:#fff; line-height:1.1; margin-bottom:14px;
+}
+.hero h1 span { color:var(--mint); }
+.hero p { color:rgba(255,255,255,.75); max-width:600px; margin:0 auto 28px; font-size:15px; }
+.hero-actions { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+.btn-padlet {
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--accent); color:#fff;
+  font-weight:700; font-size:14px; padding:12px 28px; border-radius:30px;
+  text-decoration:none; transition:.2s; box-shadow:0 4px 16px rgba(0,0,0,.2);
+}
+.btn-padlet:hover { background:var(--accent-lt); transform:translateY(-2px); }
+.btn-site {
+  display:inline-flex; align-items:center; gap:8px;
+  background:transparent; color:var(--mint);
+  font-weight:600; font-size:14px; padding:12px 24px; border-radius:30px;
+  text-decoration:none; border:1.5px solid var(--mint); transition:.2s;
+}
+.btn-site:hover { background:rgba(168,197,176,.15); }
+
+/* ── MAIN TABS ── */
+.tab-container { max-width:1000px; margin:0 auto; padding:32px 24px 64px; }
+
+.tab-nav {
+  display:flex; gap:4px; margin-bottom:28px;
+  border-bottom:2px solid var(--warm); padding-bottom:0;
+  flex-wrap:wrap;
+}
+.tab-btn {
+  background:none; border:none; cursor:pointer;
+  padding:10px 20px; font-family:'DM Sans',sans-serif;
+  font-size:14px; font-weight:600; color:var(--muted);
+  border-bottom:3px solid transparent; margin-bottom:-2px;
+  transition:.2s; border-radius:4px 4px 0 0;
+}
+.tab-btn:hover { color:var(--sage); background:rgba(74,124,89,.07); }
+.tab-btn.active { color:var(--forest); border-bottom-color:var(--sage); background:rgba(74,124,89,.09); }
+
+.tab-panel { display:none; }
+.tab-panel.active { display:block; animation:fadeIn .25s ease; }
+@keyframes fadeIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:none} }
+
+/* ── INTRO BOX ── */
+.intro-box {
+  background:var(--forest2); color:white;
+  border-radius:10px; padding:20px 24px; margin-bottom:28px;
+  font-size:14px; line-height:1.7;
+}
+.intro-box strong { color:var(--mint); }
+
+/* ── SLIDE ACCORDION ── */
+.slide-accordion { display:flex; flex-direction:column; gap:10px; }
+
+.slide-item {
+  background:#fff; border:1.5px solid var(--warm);
+  border-radius:10px; overflow:hidden;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+  transition:box-shadow .2s;
+}
+.slide-item:hover { box-shadow:0 4px 14px rgba(0,0,0,.08); }
+
+.slide-header {
+  display:flex; align-items:center; gap:14px;
+  padding:14px 18px; cursor:pointer;
+  user-select:none;
+}
+.slide-num {
+  background:var(--sage); color:#fff;
+  font-family:'Playfair Display',serif; font-weight:700; font-size:13px;
+  min-width:32px; height:32px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.slide-item.special .slide-num { background:var(--accent); }
+
+.slide-title-wrap { flex:1; }
+.slide-title-en {
+  font-family:'Playfair Display',serif; font-size:15px;
+  font-weight:700; color:var(--forest);
+}
+.slide-title-it { font-size:12px; color:var(--muted); margin-top:1px; }
+
+.slide-toggle {
+  color:var(--sage); font-size:18px; transition:.3s;
+  flex-shrink:0;
+}
+.slide-item.open .slide-toggle { transform:rotate(180deg); }
+
+.slide-body {
+  display:none; padding:0 18px 18px;
+  border-top:1px solid var(--warm);
+}
+.slide-item.open .slide-body { display:block; }
+
+.slide-body-grid {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:14px; margin-top:14px;
+}
+@media(max-width:580px){ .slide-body-grid { grid-template-columns:1fr; } }
+
+.def-box {
+  background:var(--cream); border-radius:8px;
+  padding:14px 16px; font-size:13.5px;
+}
+.def-box .def-label {
+  font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+  color:var(--sage); margin-bottom:6px;
+}
+.def-box p { line-height:1.65; color:var(--text); }
+
+.keyword-strip {
+  margin-top:12px; display:flex; flex-wrap:wrap; gap:6px;
+}
+.kw {
+  background:rgba(74,124,89,.12); color:var(--forest);
+  font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:20px;
+}
+
+.example-box {
+  margin-top:12px; background:#fff8ee;
+  border-left:4px solid var(--accent); border-radius:0 8px 8px 0;
+  padding:12px 14px; font-size:13px;
+}
+.example-box .ex-label {
+  font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+  color:var(--accent); margin-bottom:5px;
+}
+
+.slide-tip {
+  margin-top:10px; background:rgba(26,58,42,.06);
+  border-radius:8px; padding:10px 14px; font-size:12.5px; color:var(--muted);
+  display:flex; gap:8px; align-items:flex-start;
+}
+.slide-tip::before { content:'💡'; flex-shrink:0; }
+
+/* ── SOURCES TAB ── */
+.sources-section { margin-bottom:32px; }
+.sources-section h3 {
+  font-family:'Playfair Display',serif; font-size:18px; font-weight:700;
+  color:var(--forest); margin-bottom:16px;
+  padding-bottom:8px; border-bottom:2px solid var(--warm);
+  display:flex; align-items:center; gap:10px;
+}
+.source-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:12px; }
+
+.source-card {
+  background:#fff; border:1.5px solid var(--warm); border-radius:10px;
+  padding:16px 18px; text-decoration:none; display:block;
+  transition:.2s; box-shadow:0 2px 6px rgba(0,0,0,.04);
+}
+.source-card:hover { box-shadow:0 4px 14px rgba(0,0,0,.1); transform:translateY(-2px); border-color:var(--sage); }
+
+.source-card .src-tag {
+  font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+  margin-bottom:6px; display:inline-block; padding:2px 8px; border-radius:12px;
+}
+.src-eu { background:#d4e6f1; color:#1a5276; }
+.src-it { background:#d5f5e3; color:#1a7a3a; }
+.src-edu { background:#fdebd0; color:#935116; }
+.src-priv { background:#f5eef8; color:#6c3483; }
+
+.source-card h4 { font-size:14px; font-weight:700; color:var(--forest); margin-bottom:4px; }
+.source-card p { font-size:12px; color:var(--muted); line-height:1.5; }
+.source-card .src-url {
+  display:block; margin-top:8px; font-size:11px; color:var(--sage);
+  font-weight:600; word-break:break-all;
+}
+
+/* ── PADLET GUIDE TAB ── */
+.padlet-hero {
+  background:var(--forest); border-radius:12px;
+  padding:28px 28px 24px; margin-bottom:28px; text-align:center;
+}
+.padlet-hero h2 {
+  font-family:'Playfair Display',serif; color:#fff; font-size:24px; margin-bottom:8px;
+}
+.padlet-hero p { color:rgba(255,255,255,.75); font-size:14px; }
+
+.guide-steps { display:flex; flex-direction:column; gap:16px; margin-bottom:28px; }
+
+.step-card {
+  background:#fff; border:1.5px solid var(--warm);
+  border-radius:10px; padding:18px 20px;
+  display:flex; gap:16px; align-items:flex-start;
+}
+.step-num {
+  background:var(--sage); color:#fff;
+  font-family:'Playfair Display',serif; font-weight:700; font-size:16px;
+  min-width:40px; height:40px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.step-content h4 {
+  font-weight:700; font-size:15px; color:var(--forest); margin-bottom:6px;
+}
+.step-content p, .step-content li { font-size:13.5px; color:var(--text); line-height:1.65; }
+.step-content ul { padding-left:18px; margin-top:4px; }
+.step-content li { margin-bottom:3px; }
+.step-content .code-note {
+  display:inline-block; background:#f0f4f1; border:1px solid var(--warm);
+  font-family:monospace; font-size:12.5px; color:var(--forest);
+  padding:2px 8px; border-radius:4px; margin:2px 2px;
+}
+
+.warning-box {
+  background:#fff8ee; border:1.5px solid #e8c888;
+  border-left:4px solid var(--accent); border-radius:8px;
+  padding:14px 18px; margin-bottom:16px; font-size:13.5px;
+}
+.warning-box .w-title { font-weight:700; color:var(--accent); margin-bottom:4px; }
+
+.share-box {
+  background:var(--forest2); color:#fff;
+  border-radius:10px; padding:20px 24px; margin-top:8px;
+}
+.share-box h4 {
+  font-family:'Playfair Display',serif; font-size:17px; margin-bottom:12px; color:var(--mint);
+}
+.share-steps { list-style:none; padding:0; }
+.share-steps li {
+  display:flex; gap:10px; align-items:flex-start;
+  font-size:13.5px; color:rgba(255,255,255,.85); margin-bottom:8px;
+}
+.share-steps li::before {
+  content:attr(data-n);
+  background:var(--accent); color:#fff;
+  font-weight:700; font-size:11px;
+  min-width:22px; height:22px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; margin-top:1px;
+}
+
+/* ── FOOTER ── */
+footer {
+  background:var(--forest); color:rgba(255,255,255,.6);
+  text-align:center; padding:22px 24px; font-size:12.5px; line-height:1.8;
+}
+footer strong { color:var(--mint); }
+footer a { color:var(--mint); text-decoration:none; }
+
+/* ── UTILITIES ── */
+@media(max-width:600px){
+  .tab-btn { padding:8px 12px; font-size:12.5px; }
+  .step-card { flex-direction:column; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav class="topnav">
+  <div class="topnav-inner">
+    <span class="nav-brand">🌿 IIS Mendel · Cittadinanza Digitale 3A</span>
+    <div class="nav-links">
+      <a href="#glossario">Glossario</a>
+      <a href="#fonti">Fonti</a>
+      <a href="#padlet">Guida Padlet</a>
+      <a href="https://padlet.com" target="_blank" class="nav-padlet-btn">📌 Apri Padlet</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<header class="hero">
+  <div class="hero-tag">📚 Educazione Civica · Classe 3ª Tecnico Agrario</div>
+  <h1>Digital Citizens'<br><span>Handbook</span></h1>
+  <p>Tutto il materiale per preparare la tua slide: definizioni, esempi concreti, fonti istituzionali e la guida a Padlet.</p>
+  <div class="hero-actions">
+    <a href="https://padlet.com" target="_blank" class="btn-padlet">📌 Vai al Padlet della Classe</a>
+    <a href="https://iismendel.github.io/Orientamento-3A_Prof.Crespi_IIS-MENDEL/" target="_blank" class="btn-site">🌐 Sito di orientamento</a>
+  </div>
+</header>
+
+<!-- ══ MAIN ══ -->
+<main class="tab-container">
+
+  <!-- ── TAB NAV ── -->
+  <div class="tab-nav" id="glossario">
+    <button class="tab-btn active" data-tab="glossario">📖 Glossario delle 15 slide</button>
+    <button class="tab-btn" data-tab="fonti" id="fonti-tab-btn">🏛️ Fonti istituzionali</button>
+    <button class="tab-btn" data-tab="padlet" id="padlet-tab-btn">🎯 Guida Padlet</button>
+  </div>
+
+  <!-- ══════════════════════════════════
+       TAB 1 — GLOSSARIO
+  ══════════════════════════════════ -->
+  <div class="tab-panel active" id="tab-glossario">
+
+    <div class="intro-box">
+      Ogni slide del vostro Padlet corrisponde a un tema specifico. In questa sezione trovate la <strong>definizione italiana</strong>, la <strong>definizione in inglese</strong>, alcune <strong>parole chiave</strong> utili per la slide, un <strong>esempio concreto</strong> e un consiglio su cosa includere. Fate clic sul titolo per aprire la scheda.
+    </div>
+
+    <div class="slide-accordion">
+
+      <!-- SLIDE 01 -->
+      <div class="slide-item">
+        <div class="slide-header" onclick="toggleSlide(this)">
+          <div class="slide-num">01</div>
+          <div class="slide-title-wrap">
+            <div class="slide-title-en">What Is Digital Citizenship?</div>
+            <div class="slide-title-it">Cos'è la Cittadinanza Digitale?</div>
+          </div>
+          <span class="slide-toggle">▼</span>
+        </div>
+        <div class="slide-body">
+          <div class="slide-body-grid">
+            <div class="def-box">
+              <div class="def-label">🇮🇹 Definizione</div>
+              <p>La <strong>cittadinanza digitale</strong> è l'insieme di diritti, responsabilità e comportamenti che ogni persona deve adottare quando usa Internet, i social media e gli strumenti digitali. Essere un cittadino digitale significa partecipare alla vita online in modo responsabile, rispettando gli altri e le leggi.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-label">🇬🇧 Definition</div>
+              <p><strong>Digital citizenship</strong> is the set of rights, responsibilities and behaviours expected of anyone who uses the internet, social media and digital tools. A digital citizen participates in online life responsibly, respecting others and complying with laws and ethical standards.</p>
+            </div>
+          </div>
+          <div class="keyword-strip">
+            <span class="kw">digital citizenship</span><span class="kw">responsibility</span><span class="kw">online rights</span><span class="kw">netiquette</span><span class="kw">cittadinanza digitale</span>
+          </div>
+          <div class="example-box">
+            <div class="ex-label">💬 Esempio concreto</div>
+            Un agricoltore che usa Instagram per vendere i suoi prodotti è un cittadino digitale: deve rispettare le regole della piattaforma, non pubblicare false informazioni sui prodotti, rispettare la privacy dei clienti e rispondere ai commenti in modo corretto.
+          </div>
+          <div class="slide-tip">Inserisci nella slide una definizione breve + un'immagine che rappresenti una persona che usa un dispositivo digitale in modo consapevole.</div>
+        </div>
+      </div>
+
+      <!-- SLIDE 02 -->
+      <div class="slide-item">
+        <div class="slide-header" onclick="toggleSlide(this)">
+          <div class="slide-num">02</div>
+          <div class="slide-title-wrap">
+            <div class="slide-title-en">Online vs Face-to-Face</div>
+            <div class="slide-title-it">Comunicazione Online vs di Persona</div>
+          </div>
+          <span class="slide-toggle">▼</span>
+        </div>
+        <div class="slide-body">
+          <div class="slide-body-grid">
+            <div class="def-box">
+              <div class="def-label">🇮🇹 Definizione</div>
+              <p>La comunicazione <strong>di persona (de-visu)</strong> usa la voce, il corpo, le espressioni facciali e il contatto oculare. La comunicazione <strong>digitale</strong> avviene tramite testo, audio o video su dispositivi: manca del linguaggio del corpo e spesso è asincrona (non in tempo reale). Questo crea rischi di incomprensione.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-label">🇬🇧 Definition</div>
+              <p><strong>Face-to-face communication</strong> uses voice, body language, facial expressions and eye contact. <strong>Digital communication</strong> happens via text, audio or video on devices: it lacks body language and is often asynchronous. This increases the risk of misunderstandings, impulsive messages and the "online disinhibition effect".</p>
+            </div>
+          </div>
+          <div class="keyword-strip">
+            <span class="kw">face-to-face</span><span class="kw">embodiment parziale</span><span class="kw">Zoom fatigue</span><span class="kw">asincrono</span><span class="kw">linguaggio del corpo</span><span class="kw">disinhibition effect</span>
+          </div>
+          <div class="example-box">
+            <div class="ex-label">💬 Esempio concreto</div>
+            In una riunione di persona con un fornitore di sementi, noti subito se l'altro è nervoso dal tremore delle mani o dall'incrocio delle braccia. In videochiamata, quella stessa persona appare solo a mezzo busto: perdi il 60% dei segnali non verbali che ti aiutano a capire se si sta fidando di te.
+          </div>
+          <div class="slide-tip">Usa una tabella con 4 differenze chiave (es: contatto oculare, velocità di risposta, tono, linguaggio del corpo). Molto visivo ed efficace.</div>
+        </div>
+      </div>
+
+      <!-- SLIDE 03 -->
+      <div class="slide-item">
+        <div class="slide-header" onclick="toggleSlide(this)">
+          <div class="slide-num">03</div>
+          <div class="slide-title-wrap">
+            <div class="slide-title-en">What Is Netiquette?</div>
+            <div class="slide-title-it">Cos'è la Netiquette?</div>
+          </div>
+          <span class="slide-toggle">▼</span>
+        </div>
+        <div class="slide-body">
+          <div class="slide-body-grid">
+            <div class="def-box">
+              <div class="def-label">🇮🇹 Definizione</div>
+              <p>La <strong>netiquette</strong> (network + étiquette francese) è il galateo di Internet: un insieme di regole non scritte e di buone pratiche che guidano il comportamento online. Non è una legge, ma il suo rispetto è fondamentale per evitare danni reputazionali e conflitti digitali.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-label">🇬🇧 Definition</div>
+              <p><strong>Netiquette</strong> (network + French "étiquette") is the code of polite behaviour on the internet. It covers how to write emails, participate in online discussions and behave on social media. While not legally binding, violating netiquette can cause lasting damage to one's reputation and relationships.</p>
+            </div>
+          </div>
+          <div class="keyword-strip">
+            <span class="kw">netiquette</span><span class="kw">galateo digitale</span><span class="kw">etichetta online</span><span class="kw">network etiquette</span><span class="kw">codice di condotta</span>
+          </div>
+          <div class="example-box">
+            <div class="ex-label">💬 Esempio concreto</div>
+            La parola "netiquette" compare per la prima volta nel 1982 nei gruppi di discussione di ARPANET (l'antenato di Internet). Già allora, gli utenti avevano stabilito regole per non offendere e per comunicare in modo chiaro. Oggi le stesse regole si applicano a WhatsApp, Instagram e Teams.
+          </div>
+          <div class="slide-tip">Spiega l'etimologia della parola (network + étiquette) e aggiungi 3–4 regole base con icone.</div>
+        </div>
+      </div>
+
+      <!-- SLIDE 04 -->
+      <div class="slide-item">
+        <div class="slide-header" onclick="toggleSlide(this)">
+          <div class="slide-num">04</div>
+          <div class="slide-title-wrap">
+            <div class="slide-title-en">Think Before You Post</div>
+            <div class="slide-title-it">Pensa Prima di Pubblicare</div>
+          </div>
+          <span class="slide-toggle">▼</span>
+        </div>
+        <div class="slide-body">
+          <div class="slide-body-grid">
+            <div class="def-box">
+              <div class="def-label">🇮🇹 Definizione</div>
+              <p>Ogni contenuto pubblicato online può essere visto da milioni di persone, salvato e condiviso per sempre, anche dopo essere stato cancellato. Il principio "pensa prima di pubblicare" (o <em>pause before you post</em>) invita a chiedersi: questo contenuto potrebbe offendere qualcuno? È accurato? Potrebbe danneggiarmi in futuro?</p>
+            </div>
+            <div class="def-box">
+              <div class="def-label">🇬🇧 Definition</div>
+              <p>The <strong>"think before you post"</strong> principle means pausing before sharing content online to ask: Is it true? Is it kind? Is it necessary? Could it harm me or others in the future? Because online content can be copied, shared and archived instantly, a hasty post can cause permanent damage.</p>
+            </div>
+          </div>
+          <div class="keyword-strip">
+            <span class="kw">pause before you post</span><span class="kw">contenuto permanente</span><span class="kw">reputazione online</span><span class="kw">screenshot</span><span class="kw">conseguenze</span>
+          </div>
+          <div class="example-box">
+            <div class="ex-label">💬 Esempio concreto</div>
+            Nel 2013, una PR manager americana pubblicò uno scherzo in cattivo gusto su Twitter mentre era in aereo. In 11 ore di volo, il tweet era diventato virale e quando atterrò aveva già perso il lavoro. Era una cosa scritta in 30 secondi — con conseguenze permanenti.
+          </div>
+          <div class="slide-tip">Usa le domande del metodo T.H.I.N.K. (True, Helpful, Inspiring, Necessary, Kind) come struttura visiva della slide.</div>
+        </div>
+      </div>
+
+      <!-- SLIDE 05 -->
+      <div class="slide-item">
+        <div class="slide-header" onclick="toggleSlide(this)">
+          <div class="slide-num">05</div>
+          <div class="slide-title-wrap">
+            <div class="slide-title-en">Respect Others' Privacy</div>
+            <div class="slide-title-it">Rispetta la Privacy degli Altri</div>
+          </div>
+          <span class="slide-toggle">▼</span>
+        </div>
+        <div class="slide-body">
+          <div class="slide-body-grid">
+            <div class="def-box">
+              <div class="def-label">🇮🇹 Definizione</div>
+              <p>La <strong>privacy online</strong> è il diritto di ogni persona a controllare le informazioni che la riguardano. In Italia e nell'UE è tutelata dal <strong>GDPR</strong> (Regolamento Generale sulla Protezione dei Dati, 2018). Pubblicare foto, dati personali o conversazioni private altrui senza consenso è illegale.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-label">🇬🇧 Definition</div>
+              <p><strong>Online privacy</strong> is the right to control your own personal information. In the EU it is protected by the <strong>GDPR</strong> (General Data Protection Regulation, 2018). Sharing someone else's photos, personal data or private messages without consent is illegal and can result in fines or criminal charges.</p>
+            </div>
+          </div>
+          <div class="keyword-strip">
+            <span class="kw">GDPR</span><span class="kw">privacy</span><span class="kw">consenso</span><span class="kw">dati personali</span><span class="kw">Garante Privacy</span><span class="kw">personal data</span>
+          </div>
+          <div class="example-box">
+            <div class="ex-label">💬 Esempio concreto</div>
+            Taggare un compagno in una foto imbarazzante senza chiedergli il permesso viola la sua privacy. Condividere in una chat di classe uno screenshot di una conversazione privata può essere considerato diffamazione. Entrambi i casi possono avere conseguenze legali per chi pubblica.
+          </div>
+          <div class="slide-tip">Inserisci il logo del GDPR e 3 esempi visivi di comportamenti corretti/scorretti (sì/no).</div>
+        </div>
+      </div>
+
+      <!-- SLIDE 06 -->
+      <div class="slide-item">
+        <div class="slide-header" onclick="toggleSlide(this)">
+          <div class="slide-num">06</div>
+          <div class="slide-title-wrap">
+            <div class="slide-title-en">Use Appropriate Language</div>
+            <div class="slide-title-it">Usa un Linguaggio Appropriato</div>
+          </div>
+          <span class="slide-toggle">▼</span>
+        </div>
+        <div class="slide-body">
+          <div class="slide-body-grid">
+            <div class="def-box">
+              <div class="def-label">🇮🇹 Definizione</div>
+              <p>In ogni contesto digitale esiste un <strong>registro comunicativo</strong> appropriato. Il linguaggio deve adattarsi al destinatario: informale con gli amici, formale con docenti e datori di lavoro. Scrivere in MAIUSCOLO equivale a urlare; usare abbreviazioni tipo "xké" o "cmq" in un'email professionale è irrispettoso.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-label">🇬🇧 Definition</div>
+              <p>Every digital context requires an appropriate <strong>register</strong>. Language must adapt to the audience: informal with friends, formal with teachers and employers. Writing in ALL CAPS is the digital equivalent of shouting. Abbreviations like "lol" or "idk" are fine in a chat but wrong in a professional email.</p>
+            </div>
+          </div>
+          <div class="keyword-strip">
+            <span class="kw">registro formale</span><span class="kw">CAPS LOCK = urlare</span><span class="kw">abbreviazioni</span><span class="kw">tono tipografico</span><span class="kw">professional register</span>
+          </div>
+          <div class="example-box">
+            <div class="ex-label">💬 Esempio concreto</div>
+            ❌ <em>"prof xké ho preso questo voto?? È assurdo cmq"</em> — messaggio su Teams al docente.<br>
+            ✅ <em>"Buongiorno Prof. Crespi, avrei piacere di capire la valutazione dell'ultima verifica. Quando posso fissare un appuntamento? Grazie."</em>
+          </div>
+          <div class="slide-tip">Metti a confronto due versioni dello stesso messaggio (informale vs formale) — è un formato visivo molto efficace.</div>
+        </div>
+      </div>
+
+      <!-- SLIDE 07 -->
+      <div class="slide-item">
+        <div class="slide-header" onclick="toggleSlide(this)">
+          <div class="slide-num">07</div>
+          <div class="slide-title-wrap">
+            <div class="slide-title-en">Cite Your Sources</div>
+            <div class="slide-title-it">Cita le Tue Fonti</div>
+          </div>
+          <span class="slide-toggle">▼</span>
+        </div>
+        <div class="slide-body">
+          <div class="slide-body-grid">
+            <div class="def-box">
+              <div class="def-label">🇮🇹 Definizione</div>
+              <p>Citare le fonti significa indicare da dove proviene un'informazione o un'immagine. Online è importante per tre motivi: 1) rispettare il <strong>diritto d'autore (copyright)</strong>, 2) permettere a chi legge di verificare l'informazione, 3) dimostrare onestà intellettuale. Usare contenuti altrui senza citarli si chiama plagio.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-label">🇬🇧 Definition</div>
+              <p>Citing sources means indicating where information or images come from. Online, this matters because: 1) it respects <strong>copyright</strong>, 2) it lets readers verify the information, 3) it demonstrates intellectual honesty. Using someone else's content without credit is called <strong>plagiarism</strong> and can have legal consequences.</p>
+            </div>
+          </div>
+          <div class="keyword-strip">
+            <span class="kw">copyright</span><span class="kw">citazione</span><span class="kw">plagio</span><span class="kw">fonte</span><span class="kw">Creative Commons</span><span class="kw">attribution</span>
+          </div>
+          <div class="example-box">
+            <div class="ex-label">💬 Esempio concreto</div>
+            Se per la tua slide scarichi una foto da Google Immagini e non la citi, stai usando un'opera altrui senza permesso. Usa invece immagini con licenza libera (Unsplash, Pexels, Pixabay) oppure specifica "Fonte: nome del sito" nella slide.
+          </div>
+          <div class="slide-tip">Mostra come si cita correttamente un'immagine e includi i loghi di Unsplash/Pexels come esempi di fonti libere da copyright.</div>
+        </div>
+      </div>
+
+      <!-- SLIDE 08 -->
+      <div class="slide-item">
+        <div class="slide-header" onclick="toggleSlide(this)">
+          <div class="slide-num">08</div>
+          <div class="slide-title-wrap">
+            <div class="slide-title-en">Protect Your Personal Data</div>
+            <div class="slide-title-it">Proteggi i Tuoi Dati Personali</div>
+          </div>
+          <span class="slide-toggle">▼</span>
+        </div>
+        <div class="slide-body">
+          <div class="slide-body-grid">
+            <div class="def-box">
+              <div class="def-label">🇮🇹 Definizione</div>
+              <p>I <strong>dati personali</strong> sono tutte le informazioni che identificano una persona: nome, email, numero di telefono, indirizzo, foto, geolocalizzazione. Il <strong>phishing</strong> è una truffa digitale in cui qualcuno finge di essere un ente affidabile per rubare questi dati. L'autenticazione a due fattori (2FA) è uno dei sistemi più efficaci di protezione.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-label">🇬🇧 Definition</div>
+              <p><strong>Personal data</strong> is any information that identifies a person: name, email, phone number, address, photos, location. <strong>Phishing</strong> is a digital scam where attackers impersonate trustworthy organisations to steal this data. <strong>Two-factor authentication (2FA)</strong> and strong, unique passwords are the most effective protections.</p>
+            </div>
+          </div>
+          <div class="keyword-strip">
+            <span class="kw">dati personali</span><span class="kw">phishing</span><span class="kw">2FA</span><span class="kw">password</span><span class="kw">GDPR</span><span class="kw">identity theft</span>
+          </div>
+          <div class="example-box">
+            <div class="ex-label">💬 Esempio concreto</div>
+            Ricevi un'email da "PosteItaliane" che ti chiede di cliccare un link per sbloccare il tuo conto. Il link porta a un sito falso identico all'originale. Se inserisci le credenziali, i truffatori le usano per svuotare il tuo conto. Questo è phishing.
+          </div>
+          <div class="slide-tip">Usa un'immagine di un'email di phishing (reale, anonimizzata) e indica con frecce i segnali d'allarme da riconoscere.</div>
+        </div>
+      </div>
+
+      <!-- SLIDE 09 -->
+      <div class="slide-item">
+        <div class="slide-header" onclick="toggleSlide(this)">
+          <div class="slide-num">09</div>
+          <div class="slide-title-wrap">
+            <div class="slide-title-en">Cultural Differences Online</div>
+            <div class="slide-title-it">Differenze Culturali Online</div>
+          </div>
+          <span class="slide-toggle">▼</span>
+        </div>
+        <div class="slide-body">
+          <div class="slide-body-grid">
+            <div class="def-box">
+              <div class="def-label">🇮🇹 Definizione</div>
+              <p>Lo stesso simbolo, emoji o gesto digitale può avere significati completamente diversi in culture diverse. Le emoji, pur essendo standardizzate tecnicamente dall'<strong>Unicode Consortium</strong>, non hanno un significato semantico universale. Riflettono i valori e le tradizioni dei contesti culturali in cui vengono usate.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-label">🇬🇧 Definition</div>
+              <p>The same symbol, emoji or digital gesture can carry completely different meanings across cultures. Emojis, though technically standardised by the <strong>Unicode Consortium</strong>, have no universal meaning. They reflect the values and traditions of the cultural contexts in which they are used, creating risks of misunderstanding in global communication.</p>
+            </div>
+          </div>
+          <div class="keyword-strip">
+            <span class="kw">emoji culturali</span><span class="kw">Unicode</span><span class="kw">comunicazione interculturale</span><span class="kw">malinteso</span><span class="kw">cross-cultural</span>
+          </div>
+          <div class="example-box">
+            <div class="ex-label">💬 Esempio concreto</div>
+            👍 In Italia = "ok, bravo". In Medio Oriente e Africa occidentale = gesto volgare, offensivo come il dito medio. 🙂 In Occidente = cordialità. In Cina = sorriso sarcastico o di disappunto. La nostra 🤌 in Nord Africa significa "aspetta un attimo".
+          </div>
+          <div class="slide-tip">Crea una mini-infografica con 3 emoji e i loro significati diversi per culture diverse. Molto visivo e facile da presentare.</div>
+        </div>
+      </div>
+
+      <!-- SLIDE 10 -->
+      <div class="slide-item">
+        <div class="slide-header" onclick="toggleSlide(this)">
+          <div class="slide-num">10</div>
+          <div class="slide-title-wrap">
+            <div class="slide-title-en">Generational Differences</div>
+            <div class="slide-title-it">Differenze Generazionali</div>
+          </div>
+          <span class="slide-toggle">▼</span>
+        </div>
+        <div class="slide-body">
+          <div class="slide-body-grid">
+            <div class="def-box">
+              <div class="def-label">🇮🇹 Definizione</div>
+              <p>I <strong>Digital Natives</strong> (Gen Z, nati dal 1997 al 2012) sono cresciuti con Internet e usano gli strumenti digitali in modo intuitivo, spesso con un linguaggio informale e visivo. I <strong>Digital Immigrants</strong> (Baby Boomers, nati 1946–1964, e Gen X, 1965–1980) hanno adottato il digitale da adulti e tendono a preferire comunicazioni più formali e testuali.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-label">🇬🇧 Definition</div>
+              <p><strong>Digital natives</strong> (Gen Z, born 1997–2012) grew up with the internet and use digital tools intuitively, often preferring informal, visual communication. <strong>Digital immigrants</strong> (Baby Boomers 1946–1964, Gen X 1965–1980) adopted digital tools as adults and tend to prefer more formal, text-based communication styles.</p>
+            </div>
+          </div>
+          <div class="keyword-strip">
+            <span class="kw">digital natives</span><span class="kw">digital immigrants</span><span class="kw">Gen Z</span><span class="kw">Boomers</span><span class="kw">tono tipografico</span><span class="kw">generational gap</span>
+          </div>
+          <div class="example-box">
+            <div class="ex-label">💬 Esempio concreto</div>
+            Per un Boomer, il punto fermo alla fine di un messaggio è grammatica normale. Per uno Zoomer, lo stesso punto comunica freddezza, rabbia o vuole chiudere la conversazione bruscamente. Il 👍 per un Boomer è un semplice "ok"; per la Gen Z è sbrigativo e quasi offensivo.
+          </div>
+          <div class="slide-tip">Usa la tabella "Boomers vs Gen Z" con 4–5 segnali digitali (punto, maiuscolo, messaggi brevi, 👍) e il loro significato per ogni generazione.</div>
+        </div>
+      </div>
+
+      <!-- SLIDE 11 -->
+      <div class="slide-item">
+        <div class="slide-header" onclick="toggleSlide(this)">
+          <div class="slide-num">11</div>
+          <div class="slide-title-wrap">
+            <div class="slide-title-en">Social Media Etiquette</div>
+            <div class="slide-title-it">Etichetta sui Social Media</div>
+          </div>
+          <span class="slide-toggle">▼</span>
+        </div>
+        <div class="slide-body">
+          <div class="slide-body-grid">
+            <div class="def-box">
+              <div class="def-label">🇮🇹 Definizione</div>
+              <p>Ogni piattaforma social ha le proprie regole implicite di comportamento. Su <strong>Instagram</strong> si predilige il contenuto visivo curato; su <strong>TikTok</strong> conta l'autenticità e il ritmo; su <strong>WhatsApp</strong> si lavora sulla messaggistica diretta e di gruppo. Violare queste regole non scritte crea imbarazzo o danni alla propria immagine.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-label">🇬🇧 Definition</div>
+              <p>Each social platform has its own unwritten rules. On <strong>Instagram</strong>, polished visual content is preferred; on <strong>TikTok</strong>, authenticity and rhythm matter; on <strong>WhatsApp</strong>, timely and direct messaging is the norm. Breaking these unwritten rules can cause social embarrassment or damage to one's online reputation.</p>
+            </div>
+          </div>
+          <div class="keyword-strip">
+            <span class="kw">social media rules</span><span class="kw">Instagram</span><span class="kw">TikTok</span><span class="kw">WhatsApp</span><span class="kw">community guidelines</span><span class="kw">immagine online</span>
+          </div>
+          <div class="example-box">
+            <div class="ex-label">💬 Esempio concreto</div>
+            Mandare messaggi a raffica su WhatsApp a un contatto che non risponde è considerato invadente. Commentare "seguitemi!" su ogni post altrui su Instagram è spam. Postare video su TikTok con musica di sottofondo di cui non hai i diritti può portare alla rimozione del video o alla sospensione dell'account.
+          </div>
+          <div class="slide-tip">Dedica una sezione a ciascuna piattaforma con 2–3 regole specifiche. Usa i loghi delle app come intestazioni visive.</div>
+        </div>
+      </div>
+
+      <!-- SLIDE 12 -->
+      <div class="slide-item">
+        <div class="slide-header" onclick="toggleSlide(this)">
+          <div class="slide-num">12</div>
+          <div class="slide-title-wrap">
+            <div class="slide-title-en">Cyberbullying: Recognize & React</div>
+            <div class="slide-title-it">Cyberbullismo: Riconosci e Reagisci</div>
+          </div>
+          <span class="slide-toggle">▼</span>
+        </div>
+        <div class="slide-body">
+          <div class="slide-body-grid">
+            <div class="def-box">
+              <div class="def-label">🇮🇹 Definizione</div>
+              <p>Il <strong>cyberbullismo</strong> è un atto aggressivo, intenzionale e ripetuto compiuto online contro qualcuno che non riesce a difendersi facilmente. Può includere insulti, minacce, diffusione di foto private, esclusione dai gruppi o impersonificazione digitale. In Italia è regolato dalla <strong>Legge n. 71/2017</strong> (tutela dei minori in rete).</p>
+            </div>
+            <div class="def-box">
+              <div class="def-label">🇬🇧 Definition</div>
+              <p><strong>Cyberbullying</strong> is an intentional, repeated aggressive act carried out online against someone who cannot easily defend themselves. It includes insults, threats, sharing of private images, exclusion from groups and identity theft. In Italy it is regulated by <strong>Law 71/2017</strong>. If you witness it: screenshot, block, report.</p>
+            </div>
+          </div>
+          <div class="keyword-strip">
+            <span class="kw">cyberbullismo</span><span class="kw">online harassment</span><span class="kw">Legge 71/2017</span><span class="kw">segnalazione</span><span class="kw">screenshot</span><span class="kw">blocca e segnala</span>
+          </div>
+          <div class="example-box">
+            <div class="ex-label">💬 Esempio concreto</div>
+            Un gruppo WhatsApp che esclude deliberatamente un compagno è una forma di cyberbullismo (esclusione sociale). Un profilo Instagram falso creato con le foto di qualcuno per deriderlo è cyberbullismo da impersonificazione. In entrambi i casi: fai uno screenshot, blocca chi ti molesta e segnala alla piattaforma e a un adulto di fiducia.
+          </div>
+          <div class="slide-tip">Usa la formula: "Riconosci → Segnala → Reagisci" come struttura della slide. Aggiungi il numero della Polizia Postale: 800.POLIZIA (800.764.942).</div>
+        </div>
+      </div>
+
+      <!-- SLIDE 13 -->
+      <div class="slide-item">
+        <div class="slide-header" onclick="toggleSlide(this)">
+          <div class="slide-num">13</div>
+          <div class="slide-title-wrap">
+            <div class="slide-title-en">Your Digital Footprint</div>
+            <div class="slide-title-it">La Tua Impronta Digitale</div>
+          </div>
+          <span class="slide-toggle">▼</span>
+        </div>
+        <div class="slide-body">
+          <div class="slide-body-grid">
+            <div class="def-box">
+              <div class="def-label">🇮🇹 Definizione</div>
+              <p>La <strong>digital footprint</strong> (impronta digitale) è la scia di dati che lasciamo online. Si divide in: <strong>Attiva</strong> (post, email, like — dati che condividiamo volontariamente), <strong>Passiva</strong> (cookie, indirizzo IP, geolocalizzazione — raccolti automaticamente senza che lo sappiamo), <strong>di Terze Parti</strong> (tag e menzioni fatte da altri). È quasi impossibile cancellarla completamente.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-label">🇬🇧 Definition</div>
+              <p>A <strong>digital footprint</strong> is the trail of data we leave online. It is divided into: <strong>Active</strong> (posts, emails, likes — data we share intentionally), <strong>Passive</strong> (cookies, IP address, geolocation — collected automatically), and <strong>Third-party</strong> (tags and mentions by others). It is almost impossible to erase completely once created.</p>
+            </div>
+          </div>
+          <div class="keyword-strip">
+            <span class="kw">digital footprint</span><span class="kw">impronta attiva</span><span class="kw">impronta passiva</span><span class="kw">cookie</span><span class="kw">web reputation</span><span class="kw">ego-surfing</span>
+          </div>
+          <div class="example-box">
+            <div class="ex-label">💬 Esempio concreto</div>
+            Il 75% delle aziende controlla i profili social dei candidati prima di assumere. Una foto pubblicata a 16 anni può ricomparire anni dopo durante un colloquio di lavoro. Cerca il tuo nome su Google ogni tanto: è il primo passo per sapere cosa vedono gli altri di te.
+          </div>
+          <div class="slide-tip">Usa il grafico a tre cerchi (Attiva / Passiva / Terze Parti) come immagine principale. È intuitivo e riassume tutto in un colpo d'occhio.</div>
+        </div>
+      </div>
+
+      <!-- SLIDE 14 -->
+      <div class="slide-item">
+        <div class="slide-header" onclick="toggleSlide(this)">
+          <div class="slide-num">14</div>
+          <div class="slide-title-wrap">
+            <div class="slide-title-en">Fake News & Critical Thinking</div>
+            <div class="slide-title-it">Fake News e Pensiero Critico</div>
+          </div>
+          <span class="slide-toggle">▼</span>
+        </div>
+        <div class="slide-body">
+          <div class="slide-body-grid">
+            <div class="def-box">
+              <div class="def-label">🇮🇹 Definizione</div>
+              <p>Le <strong>fake news</strong> sono informazioni false o fuorvianti presentate come notizie reali, diffuse spesso per manipolare l'opinione pubblica o ottenere click. Il <strong>fact-checking</strong> è il processo di verifica delle informazioni attraverso fonti affidabili. Il <strong>pensiero critico</strong> ci aiuta a non credere a tutto ciò che leggiamo online.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-label">🇬🇧 Definition</div>
+              <p><strong>Fake news</strong> are false or misleading stories presented as real news, often spread to manipulate opinion or generate clicks. <strong>Fact-checking</strong> is the process of verifying information through reliable sources. <strong>Critical thinking</strong> helps us question what we read online before sharing it with others.</p>
+            </div>
+          </div>
+          <div class="keyword-strip">
+            <span class="kw">fake news</span><span class="kw">fact-checking</span><span class="kw">disinformazione</span><span class="kw">pensiero critico</span><span class="kw">Snopes</span><span class="kw">bufala</span>
+          </div>
+          <div class="example-box">
+            <div class="ex-label">💬 Esempio concreto</div>
+            In agricoltura circolano spesso fake news sui pesticidi, sugli OGM e sui "superfood miracolosi". Un post virale che dice "l'aglio guarisce il coronavirus" non ha basi scientifiche. Per verificare: cerca la notizia su Agence France-Presse Fact Check, Pagella Politica o FactCheckEU.
+          </div>
+          <div class="slide-tip">Mostra il metodo S.I.F.T. (Stop, Investigate the source, Find better coverage, Trace claims) come guida pratica al fact-checking.</div>
+        </div>
+      </div>
+
+      <!-- SLIDE 15 — special -->
+      <div class="slide-item special">
+        <div class="slide-header" onclick="toggleSlide(this)">
+          <div class="slide-num">15</div>
+          <div class="slide-title-wrap">
+            <div class="slide-title-en">Our Digital Citizenship Pledge</div>
+            <div class="slide-title-it">⭐ Il Patto della Classe — Slide Collettiva</div>
+          </div>
+          <span class="slide-toggle">▼</span>
+        </div>
+        <div class="slide-body">
+          <div class="slide-body-grid">
+            <div class="def-box">
+              <div class="def-label">🇮🇹 Che cos'è</div>
+              <p>La slide 15 è creata <strong>insieme in classe</strong> durante la seconda lezione, dopo aver visto tutte le presentazioni. È un "patto" scritto dalla classe: 5 impegni concreti che tutti si assumono come cittadini digitali. Va scritta in inglese, in prima persona plurale (<em>We pledge to…</em>).</p>
+            </div>
+            <div class="def-box">
+              <div class="def-label">🇬🇧 How it works</div>
+              <p>Slide 15 is created <strong>together as a class</strong> during Lesson 2. It is a collective "pledge": 5 concrete commitments that everyone makes as digital citizens. Write it in English, using the first person plural (<em>"We pledge to…"</em>) and let every student suggest at least one point.</p>
+            </div>
+          </div>
+          <div class="example-box">
+            <div class="ex-label">💬 Esempio di struttura</div>
+            <strong>We, the Digital Citizens of Class 3A, pledge to:</strong><br>
+            1. Think before we post.<br>
+            2. Respect others' privacy online.<br>
+            3. Check sources before sharing news.<br>
+            4. Use appropriate language in every digital context.<br>
+            5. Stand up against cyberbullying.
+          </div>
+          <div class="slide-tip">Questa slide viene compilata in diretta durante la lezione. Ogni studente propone un impegno. Il prof seleziona i migliori 5 con la classe e li inserisce nel Padlet. È il momento più collaborativo di tutta l'attività.</div>
+        </div>
+      </div>
+
+    </div><!-- /slide-accordion -->
+  </div><!-- /tab-glossario -->
+
+
+  <!-- ══════════════════════════════════
+       TAB 2 — FONTI ISTITUZIONALI
+  ══════════════════════════════════ -->
+  <div class="tab-panel" id="tab-fonti">
+
+    <div class="intro-box">
+      Usa queste fonti per approfondire il tuo argomento e per indicarle nella slide come riferimenti. Priorità alle fonti <strong>UE e italiane</strong>, più autorevoli per un lavoro scolastico.
+    </div>
+
+    <!-- UE -->
+    <div class="sources-section">
+      <h3>🇪🇺 Fonti dell'Unione Europea</h3>
+      <div class="source-grid">
+        <a class="source-card" href="https://digital-strategy.ec.europa.eu/it/policies/digitalisation-agriculture" target="_blank">
+          <span class="src-tag src-eu">Commissione Europea</span>
+          <h4>Digitalizzazione dell'Agricoltura UE</h4>
+          <p>La strategia europea per il digitale nel settore primario: IA, big data, agricoltura di precisione.</p>
+          <span class="src-url">digital-strategy.ec.europa.eu</span>
+        </a>
+        <a class="source-card" href="https://education.ec.europa.eu/it/focus-topics/digital-education/action-plan" target="_blank">
+          <span class="src-tag src-eu">Commissione Europea</span>
+          <h4>Piano d'Azione per l'Istruzione Digitale (DEAP)</h4>
+          <p>Il piano europeo per l'educazione digitale nelle scuole: competenze, sicurezza, cittadinanza.</p>
+          <span class="src-url">education.ec.europa.eu</span>
+        </a>
+        <a class="source-card" href="https://europa.eu/youth/EU/article/45/1315_it" target="_blank">
+          <span class="src-tag src-eu">EU Youth Portal</span>
+          <h4>Competenze Digitali per i Giovani</h4>
+          <p>Il framework DigComp 2.2: le 5 aree di competenza digitale richieste a ogni cittadino europeo.</p>
+          <span class="src-url">europa.eu/youth</span>
+        </a>
+        <a class="source-card" href="https://www.europarl.europa.eu/factsheets/it/sheet/145/protezione-dei-dati-nell-ue" target="_blank">
+          <span class="src-tag src-eu">Parlamento Europeo</span>
+          <h4>GDPR – Protezione dei Dati nell'UE</h4>
+          <p>Spiegazione semplice del Regolamento Generale sulla Protezione dei Dati: diritti, obblighi, sanzioni.</p>
+          <span class="src-url">europarl.europa.eu</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ITALIA -->
+    <div class="sources-section">
+      <h3>🇮🇹 Fonti Italiane Istituzionali</h3>
+      <div class="source-grid">
+        <a class="source-card" href="https://www.garanteprivacy.it" target="_blank">
+          <span class="src-tag src-it">Garante Privacy</span>
+          <h4>Garante per la Protezione dei Dati Personali</h4>
+          <p>L'autorità italiana che tutela la privacy. Sezione dedicata ai giovani e alla scuola.</p>
+          <span class="src-url">garanteprivacy.it</span>
+        </a>
+        <a class="source-card" href="https://www.commissariatodips.it" target="_blank">
+          <span class="src-tag src-it">Polizia Postale</span>
+          <h4>Commissariato di P.S. Online</h4>
+          <p>Guida al cyberbullismo, alle truffe online, al phishing e alla sicurezza in rete. Sezione ragazzi.</p>
+          <span class="src-url">commissariatodips.it</span>
+        </a>
+        <a class="source-card" href="https://www.mise.gov.it/it/comunicazioni/internet-e-digitale" target="_blank">
+          <span class="src-tag src-it">MIMIT</span>
+          <h4>Ministero Imprese e Made in Italy – Digitale</h4>
+          <p>Politiche italiane per la transizione digitale delle imprese, incluso il settore agroalimentare.</p>
+          <span class="src-url">mimit.gov.it</span>
+        </a>
+        <a class="source-card" href="https://www.smau.it/cybersecurity-e-privacy" target="_blank">
+          <span class="src-tag src-it">Cybersecurity</span>
+          <h4>ACN – Agenzia per la Cybersicurezza Nazionale</h4>
+          <p>Linee guida sulla sicurezza informatica per privati e imprese. Materiali formativi gratuiti.</p>
+          <span class="src-url">acn.gov.it</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- EDUCAZIONE -->
+    <div class="sources-section">
+      <h3>📚 Risorse per la Didattica</h3>
+      <div class="source-grid">
+        <a class="source-card" href="https://feltrinelliscuola.it/wp-content/uploads/2025/10/netiquette.pdf" target="_blank">
+          <span class="src-tag src-edu">PDF Gratuito</span>
+          <h4>Netiquette – Feltrinelli Scuola</h4>
+          <p>Scheda didattica completa sulla netiquette: regole, esempi, attività. Scaricabile gratuitamente.</p>
+          <span class="src-url">feltrinelliscuola.it</span>
+        </a>
+        <a class="source-card" href="https://www.generazioniconnesse.it" target="_blank">
+          <span class="src-tag src-edu">Progetto Europeo</span>
+          <h4>Generazioni Connesse (Safer Internet)</h4>
+          <p>Il progetto italiano del programma Safer Internet UE: materiali su cyberbullismo, privacy, fake news.</p>
+          <span class="src-url">generazioniconnesse.it</span>
+        </a>
+        <a class="source-card" href="https://www.agcom.it/documents/10179/0/Guida/6c14bb17-5f7f-44d4-aeaf-29c52c073a9a" target="_blank">
+          <span class="src-tag src-edu">AGCOM</span>
+          <h4>Guida per i Giovani – AGCOM</h4>
+          <p>L'Autorità per le Garanzie nelle Comunicazioni: guida per adolescenti su media, social e diritti.</p>
+          <span class="src-url">agcom.it</span>
+        </a>
+        <a class="source-card" href="https://www.stateofmind.it/2025/11/comunicazione-non-verbale/" target="_blank">
+          <span class="src-tag src-edu">Psicologia</span>
+          <h4>Comunicazione Non Verbale – State of Mind</h4>
+          <p>Articolo scientifico accessibile sulla comunicazione non verbale e le sue implicazioni digitali.</p>
+          <span class="src-url">stateofmind.it</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- PRIVACY & SICUREZZA -->
+    <div class="sources-section">
+      <h3>🔐 Privacy e Digital Footprint</h3>
+      <div class="source-grid">
+        <a class="source-card" href="https://www.ibm.com/it-it/think/topics/digital-footprint" target="_blank">
+          <span class="src-tag src-priv">IBM</span>
+          <h4>Cos'è un'Impronta Digitale – IBM</h4>
+          <p>Spiegazione completa e attendibile di digital footprint attiva, passiva e di terze parti.</p>
+          <span class="src-url">ibm.com/it-it</span>
+        </a>
+        <a class="source-card" href="https://www.avg.com/it/signal/what-is-netiquette" target="_blank">
+          <span class="src-tag src-priv">AVG / Sicurezza</span>
+          <h4>11 Regole della Netiquette – AVG</h4>
+          <p>Guida pratica e aggiornata alle regole del galateo online da parte di un'azienda di cybersecurity.</p>
+          <span class="src-url">avg.com/it</span>
+        </a>
+        <a class="source-card" href="https://www.scoprinetwork.com/boomers-vs-zoomers-comunicazione-generazionale-a-confronto/" target="_blank">
+          <span class="src-tag src-priv">Comunicazione</span>
+          <h4>Boomers vs Zoomers – ScopriNetwork</h4>
+          <p>Analisi del divario generazionale nella comunicazione digitale con esempi pratici e tabelle comparative.</p>
+          <span class="src-url">scoprinetwork.com</span>
+        </a>
+        <a class="source-card" href="https://www.ditals.com/la-comunicazione-interculturale/" target="_blank">
+          <span class="src-tag src-priv">Intercultura</span>
+          <h4>Comunicazione Interculturale ed Emoji – DITALS</h4>
+          <p>Come le emoji variano di significato tra culture diverse. Utile per la slide 09.</p>
+          <span class="src-url">ditals.com</span>
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /tab-fonti -->
+
+
+  <!-- ══════════════════════════════════
+       TAB 3 — GUIDA PADLET
+  ══════════════════════════════════ -->
+  <div class="tab-panel" id="tab-padlet">
+
+    <div class="padlet-hero">
+      <h2>📌 Come creare e condividere il tuo Padlet</h2>
+      <p>Segui i passi qui sotto. Ogni studente crea il <strong>proprio Padlet individuale</strong> e lo condivide con il prof tramite link.</p>
+    </div>
+
+    <div class="warning-box">
+      <div class="w-title">⚠️ Attenzione — Account gratuito</div>
+      Il piano gratuito di Padlet permette di creare <strong>massimo 3 Padlet</strong>. Se ne hai già 3, devi eliminarne uno o usare un altro account. Usa la tua email scolastica per registrarti.
+    </div>
+
+    <h3 style="font-family:'Playfair Display',serif; color:var(--forest); font-size:18px; margin-bottom:16px;">PARTE 1 — Crea il tuo Padlet</h3>
+
+    <div class="guide-steps">
+
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Vai su Padlet e crea un account</h4>
+          <p>Apri il browser e vai su <strong>padlet.com</strong>. Clicca su <span class="code-note">Registrati</span> in alto a destra. Puoi registrarti con la <strong>tua email scolastica</strong> o con Google. Se hai già un account, fai login.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>Crea un nuovo Padlet</h4>
+          <p>Dalla tua dashboard clicca sul pulsante <span class="code-note">+ Crea</span> o <span class="code-note">Make a Padlet</span>. Ti apparirà una schermata con i formati disponibili.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>Scegli il formato "Slideshow"</h4>
+          <p>Tra i formati disponibili, seleziona <span class="code-note">Slideshow</span> (ha l'icona di un pannello con frecce). Questo formato trasforma le card in slide navigabili, perfetto per la presentazione in classe.</p>
+          <p style="margin-top:6px; color:var(--muted);">Gli altri formati (Wall, Grid, ecc.) vanno bene lo stesso — il prof li può leggere — ma Slideshow è il più adatto per presentare.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h4>Dai un titolo al tuo Padlet</h4>
+          <p>Clicca sull'icona <span class="code-note">⚙️ Impostazioni</span> (Settings) in alto a destra. Inserisci come titolo:</p>
+          <p style="margin-top:6px; background:#f0f7f2; padding:8px 12px; border-radius:6px; font-style:italic; font-weight:600; color:var(--forest);">"Digital Citizens' Handbook – [Nome Cognome] – 3A"</p>
+          <p style="margin-top:6px;">Puoi aggiungere anche una breve descrizione: <em>"Slide di Ed. Civica sulla Cittadinanza Digitale."</em></p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <h4>Aggiungi la tua slide</h4>
+          <p>Clicca sul pulsante <span class="code-note">+</span> (in basso a destra o al centro del Padlet vuoto) per aggiungere una nuova card. Si aprirà un pannello laterale dove puoi:</p>
+          <ul>
+            <li>Inserire il <strong>Titolo</strong> della slide (usa il titolo in inglese della tua slide)</li>
+            <li>Scrivere il <strong>testo</strong> nel corpo: 4–6 punti, in inglese, parole tue</li>
+            <li>Cliccare sull'icona <span class="code-note">🖼️</span> per aggiungere un'immagine (carica dal dispositivo, cerca sul web integrato o usa un URL)</li>
+            <li>Aggiungere eventualmente un link a una fonte</li>
+          </ul>
+          <p style="margin-top:8px;">Quando hai finito, clicca <span class="code-note">Pubblica</span> o <span class="code-note">Salva</span>.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">6</div>
+        <div class="step-content">
+          <h4>Modifica la card se necessario</h4>
+          <p>Puoi modificare la tua card in qualsiasi momento: passa con il mouse sopra la card → clicca sull'icona <span class="code-note">✏️ Matita</span> oppure sui <span class="code-note">⋮ tre puntini</span> → Modifica. Le modifiche vengono salvate automaticamente.</p>
+        </div>
+      </div>
+
+    </div><!-- /guide-steps -->
+
+    <h3 style="font-family:'Playfair Display',serif; color:var(--forest); font-size:18px; margin:28px 0 16px;">PARTE 2 — Condividi il link con il Prof</h3>
+
+    <div class="share-box">
+      <h4>Come ottenere il link e inviarlo</h4>
+      <ol class="share-steps">
+        <li data-n="1">Clicca sul pulsante <strong>Condividi</strong> (Share) — è l'icona con la freccia in alto a destra nel tuo Padlet.</li>
+        <li data-n="2">Nella sezione <strong>"Privacy"</strong>, scegli <em>"Chiunque abbia il link può visualizzare"</em> (Anyone with the link can view). Questo permette al prof di aprirlo senza fare login.</li>
+        <li data-n="3">Clicca su <strong>"Copia link"</strong> (Copy link). Il link viene copiato negli appunti del dispositivo.</li>
+        <li data-n="4">Vai su <strong>Google Classroom</strong> (o il canale Teams della classe), crea un nuovo commento o consegna il link nell'attività indicata dal prof, e incolla il link con <em>Ctrl+V</em> (o <em>Cmd+V</em> su Mac).</li>
+        <li data-n="5">Controlla che il link funzioni: aprilo in una scheda <strong>in incognito</strong> nel browser. Se si apre il Padlet senza fare login, è tutto corretto.</li>
+      </ol>
+    </div>
+
+    <div style="margin-top:20px; background:#f2f8f4; border:1.5px solid var(--mint); border-radius:10px; padding:18px 20px;">
+      <h4 style="font-weight:700; color:var(--forest); margin-bottom:10px;">📋 Checklist prima di consegnare</h4>
+      <ul style="padding-left:18px; font-size:13.5px; line-height:2;">
+        <li>Il Padlet ha il titolo con il tuo nome e la classe</li>
+        <li>La slide (card) ha un titolo in inglese visibile</li>
+        <li>Il testo è in inglese, scritto con parole tue (no copia-incolla)</li>
+        <li>Hai almeno un'immagine pertinente</li>
+        <li>Hai indicato la fonte dell'immagine o hai usato un'immagine libera</li>
+        <li>Il link condiviso si apre senza login (test in incognito)</li>
+        <li>Hai inviato il link al prof su Google Classroom entro la fine della Lezione 1</li>
+      </ul>
+    </div>
+
+  </div><!-- /tab-padlet -->
+
+</main>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <p>Pagina di <strong>Ed. Civica</strong> creata dal <strong>Prof. Crespi</strong> per l'<strong>IIS MENDEL</strong> – Villa Cortese (MI)</p>
+  <p style="margin-top:4px; font-size:11px;">Cittadinanza Digitale · Competenza n.11 · Classe 3ª Tecnico Agrario · A.S. 2025/2026</p>
+  <p style="margin-top:4px; font-size:11px;">
+    <a href="https://iismendel.github.io/Orientamento-3A_Prof.Crespi_IIS-MENDEL/">🌐 Sito di Orientamento 3A</a>
+    &nbsp;·&nbsp;
+    <a href="https://padlet.com" target="_blank">📌 Padlet della Classe</a>
+  </p>
+</footer>
+
+<script>
+/* ── TAB SWITCHING ── */
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.tab;
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + target).classList.add('active');
+  });
+});
+
+/* Allow nav hash links to trigger tabs */
+document.querySelectorAll('a[href="#fonti"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector('[data-tab="fonti"]').click();
+    document.querySelector('.tab-container').scrollIntoView({behavior:'smooth'});
+  });
+});
+document.querySelectorAll('a[href="#padlet"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector('[data-tab="padlet"]').click();
+    document.querySelector('.tab-container').scrollIntoView({behavior:'smooth'});
+  });
+});
+
+/* ── SLIDE ACCORDION ── */
+function toggleSlide(header) {
+  const item = header.parentElement;
+  const isOpen = item.classList.contains('open');
+  // close all
+  document.querySelectorAll('.slide-item.open').forEach(el => el.classList.remove('open'));
+  // open clicked if it wasn't already open
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
