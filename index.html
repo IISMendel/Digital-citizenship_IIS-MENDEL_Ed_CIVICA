@@ -312,6 +312,90 @@ footer {
 footer strong { color:var(--mint); }
 footer a { color:var(--mint); text-decoration:none; }
 
+
+/* ── TECHNICAL GLOSSARY TAB ── */
+.alpha-index {
+  display:flex; flex-wrap:wrap; gap:6px;
+  margin-bottom:24px;
+  background:#fff; border:1.5px solid var(--warm);
+  border-radius:8px; padding:12px 16px;
+}
+.alpha-index a {
+  display:flex; align-items:center; justify-content:center;
+  width:30px; height:30px; border-radius:6px;
+  font-weight:700; font-size:13px; color:var(--forest);
+  text-decoration:none; background:var(--cream);
+  border:1px solid var(--warm); transition:.15s;
+}
+.alpha-index a:hover { background:var(--sage); color:#fff; border-color:var(--sage); }
+
+.term-list { display:flex; flex-direction:column; gap:0; }
+
+.alpha-head {
+  font-family:'Playfair Display',serif;
+  font-size:28px; font-weight:900;
+  color:var(--sage); margin:28px 0 10px;
+  padding-bottom:6px; border-bottom:2px solid var(--warm);
+}
+.alpha-head:first-child { margin-top:0; }
+
+.term-card {
+  background:#fff; border:1.5px solid var(--warm);
+  border-radius:10px; padding:16px 20px;
+  margin-bottom:10px;
+  box-shadow:0 2px 6px rgba(0,0,0,.03);
+  transition:.2s;
+}
+.term-card:hover { box-shadow:0 4px 14px rgba(0,0,0,.08); border-color:var(--mint); }
+
+.term-en {
+  font-family:'Playfair Display',serif;
+  font-size:17px; font-weight:700; color:var(--forest);
+  margin-bottom:3px;
+}
+.term-it {
+  font-size:12px; font-weight:600; color:var(--sage);
+  letter-spacing:.3px; text-transform:uppercase;
+  margin-bottom:8px;
+}
+.term-def {
+  font-size:13.5px; color:var(--text);
+  line-height:1.65; margin-bottom:8px;
+}
+.term-ex {
+  font-size:13px; color:var(--muted);
+  background:var(--cream); border-radius:6px;
+  padding:8px 12px; line-height:1.6;
+  border-left:3px solid var(--mint);
+  margin-bottom:8px; font-style:italic;
+}
+.term-ex em { font-style:normal; font-weight:700; color:var(--forest); }
+.term-ex code {
+  background:rgba(74,124,89,.12); padding:1px 6px;
+  border-radius:3px; font-size:12px; font-style:normal;
+}
+.term-slide {
+  font-size:11px; font-weight:700; color:var(--accent);
+  letter-spacing:.5px; text-transform:uppercase;
+}
+
+/* ── BILINGUAL HELPERS ── */
+.en-sub {
+  display:block; margin-top:4px;
+  font-size:12.5px; color:var(--sage); font-style:italic;
+  line-height:1.5;
+}
+em.en-sub {
+  display:inline; font-size:12px; color:var(--sage);
+}
+.en-step {
+  font-family:'DM Sans',sans-serif; font-size:12px;
+  font-weight:400; color:var(--sage-lt); font-style:italic;
+}
+.share-steps li em.en-sub {
+  display:block; margin-top:3px; font-size:12px; color:rgba(168,197,176,.85);
+}
+
 /* ── PADLET GUIDE EXTRAS ── */
 .guide-section-title {
   font-family:'Playfair Display',serif; color:var(--forest);
@@ -392,6 +476,7 @@ footer a { color:var(--mint); text-decoration:none; }
     <span class="nav-brand">🌿 IIS Mendel · Cittadinanza Digitale 3A</span>
     <div class="nav-links">
       <a href="#glossario">Glossario</a>
+      <a href="#termini">Termini</a>
       <a href="#fonti">Fonti</a>
       <a href="#padlet">Guida Padlet</a>
       <a href="https://padlet.com" target="_blank" class="nav-padlet-btn">📌 Apri Padlet</a>
@@ -416,6 +501,7 @@ footer a { color:var(--mint); text-decoration:none; }
   <!-- ── TAB NAV ── -->
   <div class="tab-nav" id="glossario">
     <button class="tab-btn active" data-tab="glossario">📖 Glossario delle 15 slide</button>
+    <button class="tab-btn" data-tab="termini" id="termini-tab-btn">🔤 Glossario Tecnico</button>
     <button class="tab-btn" data-tab="fonti" id="fonti-tab-btn">🏛️ Fonti istituzionali</button>
     <button class="tab-btn" data-tab="padlet" id="padlet-tab-btn">🎯 Guida Padlet</button>
   </div>
@@ -453,7 +539,7 @@ footer a { color:var(--mint); text-decoration:none; }
             </div>
           </div>
           <div class="keyword-strip">
-            <span class="kw">digital citizenship</span><span class="kw">responsibility</span><span class="kw">online rights</span><span class="kw">netiquette</span><span class="kw">cittadinanza digitale</span>
+            <span class="kw">digital citizenship</span><span class="kw">responsibility</span><span class="kw">online rights</span><span class="kw">netiquette</span><span class="kw">digital ethics</span>
           </div>
           <div class="example-box">
             <div class="ex-label">💬 Example</div>
@@ -485,7 +571,7 @@ footer a { color:var(--mint); text-decoration:none; }
             </div>
           </div>
           <div class="keyword-strip">
-            <span class="kw">face-to-face</span><span class="kw">embodiment parziale</span><span class="kw">Zoom fatigue</span><span class="kw">asincrono</span><span class="kw">linguaggio del corpo</span><span class="kw">disinhibition effect</span>
+            <span class="kw">face-to-face</span><span class="kw">partial embodiment</span><span class="kw">Zoom fatigue</span><span class="kw">asynchronous</span><span class="kw">body language</span><span class="kw">disinhibition effect</span>
           </div>
           <div class="example-box">
             <div class="ex-label">💬 Example</div>
@@ -517,7 +603,7 @@ footer a { color:var(--mint); text-decoration:none; }
             </div>
           </div>
           <div class="keyword-strip">
-            <span class="kw">netiquette</span><span class="kw">galateo digitale</span><span class="kw">etichetta online</span><span class="kw">network etiquette</span><span class="kw">codice di condotta</span>
+            <span class="kw">netiquette</span><span class="kw">digital etiquette</span><span class="kw">online behaviour</span><span class="kw">network etiquette</span><span class="kw">code of conduct</span>
           </div>
           <div class="example-box">
             <div class="ex-label">💬 Example</div>
@@ -549,7 +635,7 @@ footer a { color:var(--mint); text-decoration:none; }
             </div>
           </div>
           <div class="keyword-strip">
-            <span class="kw">pause before you post</span><span class="kw">contenuto permanente</span><span class="kw">reputazione online</span><span class="kw">screenshot</span><span class="kw">conseguenze</span>
+            <span class="kw">pause before you post</span><span class="kw">permanent content</span><span class="kw">online reputation</span><span class="kw">screenshot</span><span class="kw">consequences</span>
           </div>
           <div class="example-box">
             <div class="ex-label">💬 Example</div>
@@ -581,7 +667,7 @@ footer a { color:var(--mint); text-decoration:none; }
             </div>
           </div>
           <div class="keyword-strip">
-            <span class="kw">GDPR</span><span class="kw">privacy</span><span class="kw">consenso</span><span class="kw">dati personali</span><span class="kw">Garante Privacy</span><span class="kw">personal data</span>
+            <span class="kw">GDPR</span><span class="kw">privacy</span><span class="kw">consent</span><span class="kw">personal data</span><span class="kw">Data Protection Authority</span><span class="kw">data rights</span>
           </div>
           <div class="example-box">
             <div class="ex-label">💬 Example</div>
@@ -613,7 +699,7 @@ footer a { color:var(--mint); text-decoration:none; }
             </div>
           </div>
           <div class="keyword-strip">
-            <span class="kw">registro formale</span><span class="kw">CAPS LOCK = urlare</span><span class="kw">abbreviazioni</span><span class="kw">tono tipografico</span><span class="kw">professional register</span>
+            <span class="kw">formal register</span><span class="kw">CAPS LOCK = shouting</span><span class="kw">abbreviations</span><span class="kw">typographic tone</span><span class="kw">professional register</span>
           </div>
           <div class="example-box">
             <div class="ex-label">💬 Example</div>
@@ -647,7 +733,7 @@ footer a { color:var(--mint); text-decoration:none; }
             </div>
           </div>
           <div class="keyword-strip">
-            <span class="kw">copyright</span><span class="kw">citazione</span><span class="kw">plagio</span><span class="kw">fonte</span><span class="kw">Creative Commons</span><span class="kw">attribution</span>
+            <span class="kw">copyright</span><span class="kw">citation</span><span class="kw">plagiarism</span><span class="kw">source</span><span class="kw">Creative Commons</span><span class="kw">attribution</span>
           </div>
           <div class="example-box">
             <div class="ex-label">💬 Example</div>
@@ -679,7 +765,7 @@ footer a { color:var(--mint); text-decoration:none; }
             </div>
           </div>
           <div class="keyword-strip">
-            <span class="kw">dati personali</span><span class="kw">phishing</span><span class="kw">2FA</span><span class="kw">password</span><span class="kw">GDPR</span><span class="kw">identity theft</span>
+            <span class="kw">personal data</span><span class="kw">phishing</span><span class="kw">two-factor authentication</span><span class="kw">strong password</span><span class="kw">GDPR</span><span class="kw">identity theft</span>
           </div>
           <div class="example-box">
             <div class="ex-label">💬 Example</div>
@@ -711,7 +797,7 @@ footer a { color:var(--mint); text-decoration:none; }
             </div>
           </div>
           <div class="keyword-strip">
-            <span class="kw">emoji culturali</span><span class="kw">Unicode</span><span class="kw">comunicazione interculturale</span><span class="kw">malinteso</span><span class="kw">cross-cultural</span>
+            <span class="kw">cultural emoji</span><span class="kw">Unicode</span><span class="kw">intercultural communication</span><span class="kw">misunderstanding</span><span class="kw">cross-cultural</span>
           </div>
           <div class="example-box">
             <div class="ex-label">💬 Example</div>
@@ -743,7 +829,7 @@ footer a { color:var(--mint); text-decoration:none; }
             </div>
           </div>
           <div class="keyword-strip">
-            <span class="kw">digital natives</span><span class="kw">digital immigrants</span><span class="kw">Gen Z</span><span class="kw">Boomers</span><span class="kw">tono tipografico</span><span class="kw">generational gap</span>
+            <span class="kw">digital natives</span><span class="kw">digital immigrants</span><span class="kw">Gen Z</span><span class="kw">Baby Boomers</span><span class="kw">typographic tone</span><span class="kw">generational gap</span>
           </div>
           <div class="example-box">
             <div class="ex-label">💬 Example</div>
@@ -775,7 +861,7 @@ footer a { color:var(--mint); text-decoration:none; }
             </div>
           </div>
           <div class="keyword-strip">
-            <span class="kw">social media rules</span><span class="kw">Instagram</span><span class="kw">TikTok</span><span class="kw">WhatsApp</span><span class="kw">community guidelines</span><span class="kw">immagine online</span>
+            <span class="kw">social media rules</span><span class="kw">Instagram</span><span class="kw">TikTok</span><span class="kw">WhatsApp</span><span class="kw">community guidelines</span><span class="kw">online image</span>
           </div>
           <div class="example-box">
             <div class="ex-label">💬 Example</div>
@@ -807,7 +893,7 @@ footer a { color:var(--mint); text-decoration:none; }
             </div>
           </div>
           <div class="keyword-strip">
-            <span class="kw">cyberbullismo</span><span class="kw">online harassment</span><span class="kw">Legge 71/2017</span><span class="kw">segnalazione</span><span class="kw">screenshot</span><span class="kw">blocca e segnala</span>
+            <span class="kw">cyberbullying</span><span class="kw">online harassment</span><span class="kw">Law 71/2017</span><span class="kw">report</span><span class="kw">screenshot</span><span class="kw">block and report</span>
           </div>
           <div class="example-box">
             <div class="ex-label">💬 Example</div>
@@ -839,7 +925,7 @@ footer a { color:var(--mint); text-decoration:none; }
             </div>
           </div>
           <div class="keyword-strip">
-            <span class="kw">digital footprint</span><span class="kw">impronta attiva</span><span class="kw">impronta passiva</span><span class="kw">cookie</span><span class="kw">web reputation</span><span class="kw">ego-surfing</span>
+            <span class="kw">digital footprint</span><span class="kw">active footprint</span><span class="kw">passive footprint</span><span class="kw">cookie</span><span class="kw">web reputation</span><span class="kw">ego-surfing</span>
           </div>
           <div class="example-box">
             <div class="ex-label">💬 Example</div>
@@ -871,7 +957,7 @@ footer a { color:var(--mint); text-decoration:none; }
             </div>
           </div>
           <div class="keyword-strip">
-            <span class="kw">fake news</span><span class="kw">fact-checking</span><span class="kw">disinformazione</span><span class="kw">pensiero critico</span><span class="kw">Snopes</span><span class="kw">bufala</span>
+            <span class="kw">fake news</span><span class="kw">fact-checking</span><span class="kw">disinformation</span><span class="kw">critical thinking</span><span class="kw">Snopes</span><span class="kw">hoax</span>
           </div>
           <div class="example-box">
             <div class="ex-label">💬 Example</div>
@@ -921,40 +1007,563 @@ footer a { color:var(--mint); text-decoration:none; }
 
 
   <!-- ══════════════════════════════════
+       TAB NEW — GLOSSARIO TECNICO
+  ══════════════════════════════════ -->
+  <div class="tab-panel" id="tab-termini">
+
+    <div class="intro-box">
+      Qui trovi tutti i <strong>termini tecnici</strong> usati nelle slide, con la traduzione italiana, la definizione in inglese e un esempio d'uso. Usalo per <strong>studiare il vocabolario</strong> prima di presentare il tuo Padlet in classe.
+    </div>
+
+    <!-- ALPHABET INDEX -->
+    <div class="alpha-index">
+      <a href="#gl-A">A</a><a href="#gl-B">B</a><a href="#gl-C">C</a>
+      <a href="#gl-D">D</a><a href="#gl-E">E</a><a href="#gl-F">F</a>
+      <a href="#gl-G">G</a><a href="#gl-H">H</a><a href="#gl-I">I</a>
+      <a href="#gl-N">N</a><a href="#gl-O">O</a><a href="#gl-P">P</a>
+      <a href="#gl-R">R</a><a href="#gl-S">S</a><a href="#gl-T">T</a>
+      <a href="#gl-U">U</a><a href="#gl-W">W</a><a href="#gl-Z">Z</a>
+    </div>
+
+    <div class="term-list">
+
+      <!-- ── A ── -->
+      <div class="alpha-head" id="gl-A">A</div>
+
+      <div class="term-card">
+        <div class="term-en">Active digital footprint</div>
+        <div class="term-it">Impronta digitale attiva</div>
+        <div class="term-def">Data that a user deliberately shares online: posts, emails, comments, likes and sign-ups.</div>
+        <div class="term-ex">Every photo you post on Instagram becomes part of your <em>active digital footprint</em>.</div>
+        <div class="term-slide">→ Slide 13</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Asynchronous communication</div>
+        <div class="term-it">Comunicazione asincrona</div>
+        <div class="term-def">Communication where there is a time gap between sending and receiving a message, such as email or recorded video.</div>
+        <div class="term-ex">Leaving a voice message on WhatsApp is <em>asynchronous</em>; a phone call is synchronous.</div>
+        <div class="term-slide">→ Slide 02</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Attribution</div>
+        <div class="term-it">Attribuzione / Citazione della fonte</div>
+        <div class="term-def">The act of crediting the original creator of an image, text or idea when you use it in your own work.</div>
+        <div class="term-ex">Writing "Photo: Unsplash / John Smith" under an image is correct <em>attribution</em>.</div>
+        <div class="term-slide">→ Slide 07</div>
+      </div>
+
+      <!-- ── B ── -->
+      <div class="alpha-head" id="gl-B">B</div>
+
+      <div class="term-card">
+        <div class="term-en">Block and report</div>
+        <div class="term-it">Blocca e segnala</div>
+        <div class="term-def">Two actions available on most social platforms to stop a user from contacting you and alert the platform to abusive behaviour.</div>
+        <div class="term-ex">If someone sends you threatening messages online, you should <em>block and report</em> them immediately.</div>
+        <div class="term-slide">→ Slide 12</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Body language</div>
+        <div class="term-it">Linguaggio del corpo</div>
+        <div class="term-def">Non-verbal communication expressed through posture, gestures, facial expressions and eye contact.</div>
+        <div class="term-ex">Crossed arms and avoided eye contact are examples of <em>body language</em> that suggest discomfort.</div>
+        <div class="term-slide">→ Slide 02</div>
+      </div>
+
+      <!-- ── C ── -->
+      <div class="alpha-head" id="gl-C">C</div>
+
+      <div class="term-card">
+        <div class="term-en">Citation</div>
+        <div class="term-it">Citazione</div>
+        <div class="term-def">A reference to a source of information, indicating the author, title and origin of a piece of content.</div>
+        <div class="term-ex">A correct <em>citation</em> for a website includes the author, page title, site name and the date you accessed it.</div>
+        <div class="term-slide">→ Slide 07</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Code of conduct</div>
+        <div class="term-it">Codice di condotta / Regolamento</div>
+        <div class="term-def">A set of rules or standards that guide behaviour in a particular community or context, such as an online forum or workplace.</div>
+        <div class="term-ex">Every social platform publishes a <em>code of conduct</em> — also called community guidelines — that all users must follow.</div>
+        <div class="term-slide">→ Slide 03, 11</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Community guidelines</div>
+        <div class="term-it">Linee guida della community</div>
+        <div class="term-def">The official rules of a social platform that define what content is allowed and what behaviour is acceptable.</div>
+        <div class="term-ex">TikTok's <em>community guidelines</em> prohibit hate speech, misinformation and content that endangers minors.</div>
+        <div class="term-slide">→ Slide 11</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Consent</div>
+        <div class="term-it">Consenso</div>
+        <div class="term-def">Permission given by a person for their data or image to be used in a specific way. Under the GDPR, consent must be freely given, specific and informed.</div>
+        <div class="term-ex">Before tagging someone in a photo, you should ask for their <em>consent</em>.</div>
+        <div class="term-slide">→ Slide 05</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Cookie</div>
+        <div class="term-it">Cookie</div>
+        <div class="term-def">A small file stored on your device by a website to remember your preferences and track your browsing behaviour.</div>
+        <div class="term-ex">When a website asks "Accept all cookies?", it is asking permission to track your activity — part of your <em>passive digital footprint</em>.</div>
+        <div class="term-slide">→ Slide 13</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Copyright</div>
+        <div class="term-it">Diritto d'autore</div>
+        <div class="term-def">The legal right that protects creators' original works — texts, images, music and videos — from being used without permission.</div>
+        <div class="term-ex">Using a photo found on Google Images without crediting the author may violate <em>copyright</em>.</div>
+        <div class="term-slide">→ Slide 07</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Creative Commons</div>
+        <div class="term-it">Creative Commons</div>
+        <div class="term-def">A set of standardised licences that allow creators to share their work with specific permissions — for example, free to use if credited.</div>
+        <div class="term-ex">Images on Unsplash are released under a <em>Creative Commons</em>-style licence: free to use, no attribution required.</div>
+        <div class="term-slide">→ Slide 07</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Critical thinking</div>
+        <div class="term-it">Pensiero critico</div>
+        <div class="term-def">The ability to analyse information objectively, question its source and evaluate its reliability before accepting or sharing it.</div>
+        <div class="term-ex">Applying <em>critical thinking</em> means asking "Who wrote this? Why? Is there evidence?" before sharing a news article.</div>
+        <div class="term-slide">→ Slide 14</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Cross-cultural communication</div>
+        <div class="term-it">Comunicazione interculturale</div>
+        <div class="term-def">The exchange of information between people from different cultural backgrounds, requiring awareness of different norms, values and communication styles.</div>
+        <div class="term-ex">Using the 👍 emoji in a message to a client in the Middle East is a <em>cross-cultural communication</em> mistake.</div>
+        <div class="term-slide">→ Slide 09</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Cyberbullying</div>
+        <div class="term-it">Cyberbullismo</div>
+        <div class="term-def">Intentional, repeated aggressive behaviour carried out through digital devices, targeting a person who cannot easily defend themselves.</div>
+        <div class="term-ex">Creating a fake profile to mock a classmate is a form of <em>cyberbullying</em> regulated in Italy by Law 71/2017.</div>
+        <div class="term-slide">→ Slide 12</div>
+      </div>
+
+      <!-- ── D ── -->
+      <div class="alpha-head" id="gl-D">D</div>
+
+      <div class="term-card">
+        <div class="term-en">Data Protection Authority</div>
+        <div class="term-it">Garante per la Protezione dei Dati Personali</div>
+        <div class="term-def">An independent public authority that supervises the application of data protection law and protects individuals' privacy rights.</div>
+        <div class="term-ex">In Italy, the <em>Garante Privacy</em> is the Data Protection Authority that enforces the GDPR.</div>
+        <div class="term-slide">→ Slide 05</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Digital citizenship</div>
+        <div class="term-it">Cittadinanza digitale</div>
+        <div class="term-def">The responsible and ethical use of technology, including understanding online rights, respecting others and complying with digital laws.</div>
+        <div class="term-ex">A good <em>digital citizen</em> thinks before posting, protects their data and treats others respectfully online.</div>
+        <div class="term-slide">→ Slide 01</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Digital ethics</div>
+        <div class="term-it">Etica digitale</div>
+        <div class="term-def">The set of moral principles that guide responsible behaviour in digital environments, covering privacy, honesty, respect and fairness.</div>
+        <div class="term-ex">Sharing someone's private messages without their permission raises serious <em>digital ethics</em> concerns.</div>
+        <div class="term-slide">→ Slide 01</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Digital footprint</div>
+        <div class="term-it">Impronta digitale</div>
+        <div class="term-def">The trail of data a person leaves when using the internet, including posts, searches, purchases and location data.</div>
+        <div class="term-ex">Your <em>digital footprint</em> is made up of everything you have ever posted, liked or searched online — even content you deleted.</div>
+        <div class="term-slide">→ Slide 13</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Digital immigrants</div>
+        <div class="term-it">Immigrati digitali</div>
+        <div class="term-def">People who grew up before the digital age (Baby Boomers, Generation X) and adopted technology as adults, often retaining more formal communication habits.</div>
+        <div class="term-ex"><em>Digital immigrants</em> tend to use full sentences and formal punctuation even in informal messaging apps.</div>
+        <div class="term-slide">→ Slide 10</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Digital natives</div>
+        <div class="term-it">Nativi digitali</div>
+        <div class="term-def">People born into a world with widespread digital technology (Gen Z, born 1997–2012) who have grown up using the internet and smartphones intuitively.</div>
+        <div class="term-ex"><em>Digital natives</em> switch naturally between platforms, communicate with emojis and interpret punctuation as tone.</div>
+        <div class="term-slide">→ Slide 10</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Disinformation</div>
+        <div class="term-it">Disinformazione</div>
+        <div class="term-def">False or inaccurate information deliberately spread to deceive people or manipulate public opinion.</div>
+        <div class="term-ex">A viral post claiming a pesticide is "completely safe" without citing any scientific study is an example of <em>disinformation</em>.</div>
+        <div class="term-slide">→ Slide 14</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Disinhibition effect</div>
+        <div class="term-it">Effetto di disinibizione online</div>
+        <div class="term-def">The tendency for people to behave in ways online that they would not in face-to-face interactions, often leading to more impulsive or aggressive communication.</div>
+        <div class="term-ex">The <em>disinhibition effect</em> explains why people write offensive comments on social media that they would never say in person.</div>
+        <div class="term-slide">→ Slide 02</div>
+      </div>
+
+      <!-- ── E ── -->
+      <div class="alpha-head" id="gl-E">E</div>
+
+      <div class="term-card">
+        <div class="term-en">Ego-surfing</div>
+        <div class="term-it">Ricerca di sé online</div>
+        <div class="term-def">The practice of searching for your own name on search engines to find out what information about you is publicly visible.</div>
+        <div class="term-ex">Doing an <em>ego-surfing</em> audit once a month helps you manage your online reputation before a future employer does it for you.</div>
+        <div class="term-slide">→ Slide 13</div>
+      </div>
+
+      <!-- ── F ── -->
+      <div class="alpha-head" id="gl-F">F</div>
+
+      <div class="term-card">
+        <div class="term-en">Fact-checking</div>
+        <div class="term-it">Verifica delle fonti</div>
+        <div class="term-def">The process of investigating claims made in news articles, social media posts or other content to determine whether they are accurate.</div>
+        <div class="term-ex">Before sharing a headline, apply <em>fact-checking</em>: search for the same story on at least two reliable news sources.</div>
+        <div class="term-slide">→ Slide 14</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Fake news</div>
+        <div class="term-it">Notizie false / Bufale</div>
+        <div class="term-def">False or misleading information presented as legitimate news, often spread to influence opinion, cause panic or generate clicks.</div>
+        <div class="term-ex">A Facebook post claiming "eating garlic cures cancer" is <em>fake news</em> — it has no scientific evidence and exploits people's fears.</div>
+        <div class="term-slide">→ Slide 14</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Formal register</div>
+        <div class="term-it">Registro formale</div>
+        <div class="term-def">A style of language used in professional or official contexts, characterised by complete sentences, correct grammar and respectful tone.</div>
+        <div class="term-ex">Emails to teachers and employers should always use <em>formal register</em> — no abbreviations, no emojis, no ALL CAPS.</div>
+        <div class="term-slide">→ Slide 06</div>
+      </div>
+
+      <!-- ── G ── -->
+      <div class="alpha-head" id="gl-G">G</div>
+
+      <div class="term-card">
+        <div class="term-en">GDPR</div>
+        <div class="term-it">Regolamento Generale sulla Protezione dei Dati</div>
+        <div class="term-def">The General Data Protection Regulation: EU law (2018) that gives individuals control over their personal data and requires organisations to handle it responsibly.</div>
+        <div class="term-ex">Under the <em>GDPR</em>, websites must ask for your consent before storing cookies or sharing your data with third parties.</div>
+        <div class="term-slide">→ Slide 05, 08</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Generational gap</div>
+        <div class="term-it">Divario generazionale</div>
+        <div class="term-def">The difference in values, communication styles and technological habits between people of different age groups, often causing misunderstandings.</div>
+        <div class="term-ex">The <em>generational gap</em> in digital communication means a full stop can feel neutral to a Boomer but passive-aggressive to a Gen Z.</div>
+        <div class="term-slide">→ Slide 10</div>
+      </div>
+
+      <!-- ── H ── -->
+      <div class="alpha-head" id="gl-H">H</div>
+
+      <div class="term-card">
+        <div class="term-en">Hoax</div>
+        <div class="term-it">Bufala / Falsa notizia</div>
+        <div class="term-def">A deliberately fabricated story or piece of information intended to deceive, often spread through social media chains or messaging apps.</div>
+        <div class="term-ex">The WhatsApp message saying "forward this to 10 friends or your phone will be blocked tomorrow" is a classic <em>hoax</em>.</div>
+        <div class="term-slide">→ Slide 14</div>
+      </div>
+
+      <!-- ── I ── -->
+      <div class="alpha-head" id="gl-I">I</div>
+
+      <div class="term-card">
+        <div class="term-en">Identity theft</div>
+        <div class="term-it">Furto d'identità</div>
+        <div class="term-def">The illegal use of someone else's personal data — name, account credentials, images — to impersonate them online or commit fraud.</div>
+        <div class="term-ex">If someone steals your password and posts as you, that is <em>identity theft</em> — a criminal offence in Italy.</div>
+        <div class="term-slide">→ Slide 08</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Intercultural communication</div>
+        <div class="term-it">Comunicazione interculturale</div>
+        <div class="term-def">The study and practice of effective communication between people who come from different cultural backgrounds and may have different assumptions and norms.</div>
+        <div class="term-ex">Good <em>intercultural communication</em> requires awareness that gestures, humour and punctuation do not translate equally across cultures.</div>
+        <div class="term-slide">→ Slide 09</div>
+      </div>
+
+      <!-- ── N ── -->
+      <div class="alpha-head" id="gl-N">N</div>
+
+      <div class="term-card">
+        <div class="term-en">Netiquette</div>
+        <div class="term-it">Galateo di Internet</div>
+        <div class="term-def">The informal code of polite, respectful behaviour when communicating online — covering emails, social media, video calls and messaging apps.</div>
+        <div class="term-ex">Not interrupting in a video call and muting your microphone when others speak are basic rules of <em>netiquette</em>.</div>
+        <div class="term-slide">→ Slide 03</div>
+      </div>
+
+      <!-- ── O ── -->
+      <div class="alpha-head" id="gl-O">O</div>
+
+      <div class="term-card">
+        <div class="term-en">Online behaviour</div>
+        <div class="term-it">Comportamento online</div>
+        <div class="term-def">How a person acts on the internet — the choices they make about what to post, share, comment and who to interact with.</div>
+        <div class="term-ex">Responsible <em>online behaviour</em> includes checking facts before sharing, respecting others' opinions and protecting your own privacy.</div>
+        <div class="term-slide">→ Slide 03</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Online harassment</div>
+        <div class="term-it">Molestia online</div>
+        <div class="term-def">Repeated unwanted and aggressive communication directed at an individual through digital channels, intended to intimidate, threaten or distress.</div>
+        <div class="term-ex">Sending dozens of threatening messages to someone's social media inbox is a form of <em>online harassment</em>.</div>
+        <div class="term-slide">→ Slide 12</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Online image / Online reputation</div>
+        <div class="term-it">Immagine online / Reputazione online</div>
+        <div class="term-def">The overall impression a person makes in digital spaces, formed by their posts, comments, profile information and others' content about them.</div>
+        <div class="term-ex">Employers search candidates' names online: your <em>online reputation</em> can determine whether you get a job interview.</div>
+        <div class="term-slide">→ Slide 11, 13</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Online rights</div>
+        <div class="term-it">Diritti online</div>
+        <div class="term-def">The fundamental rights that every person retains in digital spaces, including the right to privacy, freedom of expression and protection from discrimination.</div>
+        <div class="term-ex">The right to have outdated personal data deleted from a website is one of your <em>online rights</em> under the GDPR (right to erasure).</div>
+        <div class="term-slide">→ Slide 01</div>
+      </div>
+
+      <!-- ── P ── -->
+      <div class="alpha-head" id="gl-P">P</div>
+
+      <div class="term-card">
+        <div class="term-en">Partial embodiment</div>
+        <div class="term-it">Embodiment parziale</div>
+        <div class="term-def">The experience of video communication where only part of a person's body is visible (typically chest up), reducing the non-verbal cues available in conversation.</div>
+        <div class="term-ex"><em>Partial embodiment</em> during online meetings contributes to Zoom fatigue because the brain works harder to decode incomplete signals.</div>
+        <div class="term-slide">→ Slide 02</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Passive digital footprint</div>
+        <div class="term-it">Impronta digitale passiva</div>
+        <div class="term-def">Data collected automatically about a user without their direct action, such as IP address, location data, browser history and cookies.</div>
+        <div class="term-ex">Every website you visit records your IP address — this is your <em>passive digital footprint</em> being created without you noticing.</div>
+        <div class="term-slide">→ Slide 13</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Permanent content</div>
+        <div class="term-it">Contenuto permanente</div>
+        <div class="term-def">Online content that persists indefinitely even after deletion, because it may have been copied, screenshot, cached or archived by others.</div>
+        <div class="term-ex">Even if you delete a post, it may be preserved as a screenshot or in a web archive — all online content should be treated as <em>permanent</em>.</div>
+        <div class="term-slide">→ Slide 04</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Personal data</div>
+        <div class="term-it">Dati personali</div>
+        <div class="term-def">Any information that can identify a living person, including name, email address, phone number, location, photos and IP address.</div>
+        <div class="term-ex">Your full name combined with your school and hometown is enough <em>personal data</em> for someone to find and contact you.</div>
+        <div class="term-slide">→ Slide 05, 08</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Phishing</div>
+        <div class="term-it">Phishing (truffa digitale)</div>
+        <div class="term-def">A cyberattack in which criminals impersonate a trusted organisation (bank, postal service) via email or SMS to trick users into revealing personal data or passwords.</div>
+        <div class="term-ex">A fake email claiming to be from your bank and asking you to "verify your account" by clicking a link is a <em>phishing</em> attempt.</div>
+        <div class="term-slide">→ Slide 08</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Plagiarism</div>
+        <div class="term-it">Plagio</div>
+        <div class="term-def">The act of using someone else's work, ideas or words and presenting them as your own, without giving credit to the original source.</div>
+        <div class="term-ex">Copying a paragraph from Wikipedia and pasting it into your slide without citing the source is <em>plagiarism</em>.</div>
+        <div class="term-slide">→ Slide 07</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Professional register</div>
+        <div class="term-it">Registro professionale</div>
+        <div class="term-def">The level and style of language appropriate for workplace or formal academic communication, characterised by clarity, respect and grammatical correctness.</div>
+        <div class="term-ex">Using <em>professional register</em> in a job application email means avoiding slang, abbreviations and emotional punctuation like "!!".</div>
+        <div class="term-slide">→ Slide 06</div>
+      </div>
+
+      <!-- ── R ── -->
+      <div class="alpha-head" id="gl-R">R</div>
+
+      <div class="term-card">
+        <div class="term-en">Report (to report)</div>
+        <div class="term-it">Segnalare / Segnalazione</div>
+        <div class="term-def">To notify a platform's moderation team about content or behaviour that violates community guidelines, such as hate speech or harassment.</div>
+        <div class="term-ex">If you see a post spreading false information about food safety, you should <em>report</em> it to the platform directly.</div>
+        <div class="term-slide">→ Slide 12</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Responsibility</div>
+        <div class="term-it">Responsabilità</div>
+        <div class="term-def">The obligation to accept the consequences of one's own actions online, including the impact on others' privacy, safety and wellbeing.</div>
+        <div class="term-ex">Digital <em>responsibility</em> means understanding that what you post can affect real people, even if you are behind a screen.</div>
+        <div class="term-slide">→ Slide 01</div>
+      </div>
+
+      <!-- ── S ── -->
+      <div class="alpha-head" id="gl-S">S</div>
+
+      <div class="term-card">
+        <div class="term-en">Screenshot</div>
+        <div class="term-it">Screenshot / Schermata</div>
+        <div class="term-def">An image capture of what is displayed on a screen at a given moment. Screenshots can preserve digital content permanently, even after deletion.</div>
+        <div class="term-ex">Take a <em>screenshot</em> of cyberbullying messages as evidence before blocking and reporting the user.</div>
+        <div class="term-slide">→ Slide 04, 12</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Source</div>
+        <div class="term-it">Fonte</div>
+        <div class="term-def">The origin of a piece of information — the person, website, publication or organisation that originally produced or published it.</div>
+        <div class="term-ex">Always indicate the <em>source</em> of images and data in your slide — even if the information is free to use.</div>
+        <div class="term-slide">→ Slide 07</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Strong password</div>
+        <div class="term-it">Password sicura</div>
+        <div class="term-def">A password that is difficult to guess, combining uppercase and lowercase letters, numbers and symbols, with a minimum of 12 characters.</div>
+        <div class="term-ex">A <em>strong password</em> looks like: <code>Agr0!colt_2026#</code> — never use your name, birthdate or the word "password".</div>
+        <div class="term-slide">→ Slide 08</div>
+      </div>
+
+      <!-- ── T ── -->
+      <div class="alpha-head" id="gl-T">T</div>
+
+      <div class="term-card">
+        <div class="term-en">Third-party digital footprint</div>
+        <div class="term-it">Impronta digitale di terze parti</div>
+        <div class="term-def">Data about a person created by others, such as photos they are tagged in, mentions in articles, or reviews that cite their work.</div>
+        <div class="term-ex">If a classmate tags you in a photo without your consent, that becomes part of your <em>third-party digital footprint</em>.</div>
+        <div class="term-slide">→ Slide 13</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Two-factor authentication (2FA)</div>
+        <div class="term-it">Autenticazione a due fattori</div>
+        <div class="term-def">A security method that requires two forms of verification to access an account — typically a password plus a one-time code sent to your phone.</div>
+        <div class="term-ex">Enable <em>2FA</em> on all your accounts: even if someone steals your password, they cannot log in without your phone.</div>
+        <div class="term-slide">→ Slide 08</div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-en">Typographic tone</div>
+        <div class="term-it">Tono tipografico</div>
+        <div class="term-def">The emotional meaning conveyed by choices in punctuation, capitalisation and spacing in written digital messages — especially as interpreted by younger generations.</div>
+        <div class="term-ex">A full stop in "ok." communicates a very different <em>typographic tone</em> to "ok" or "ok!" — each signals a different emotional state to Gen Z readers.</div>
+        <div class="term-slide">→ Slide 06, 10</div>
+      </div>
+
+      <!-- ── U ── -->
+      <div class="alpha-head" id="gl-U">U</div>
+
+      <div class="term-card">
+        <div class="term-en">Unicode</div>
+        <div class="term-it">Unicode</div>
+        <div class="term-def">An international standard for encoding text and symbols — including emoji — so they display consistently across all devices and operating systems.</div>
+        <div class="term-ex">The <em>Unicode Consortium</em> approves and standardises every new emoji added each year, but it cannot standardise their cultural meaning.</div>
+        <div class="term-slide">→ Slide 09</div>
+      </div>
+
+      <!-- ── W ── -->
+      <div class="alpha-head" id="gl-W">W</div>
+
+      <div class="term-card">
+        <div class="term-en">Web reputation</div>
+        <div class="term-it">Reputazione web / Reputazione online</div>
+        <div class="term-def">The overall perception of a person, brand or organisation formed by the content available about them on the internet.</div>
+        <div class="term-ex">Managing your <em>web reputation</em> means regularly checking what appears when someone searches your name and removing or contextualising negative content.</div>
+        <div class="term-slide">→ Slide 13</div>
+      </div>
+
+      <!-- ── Z ── -->
+      <div class="alpha-head" id="gl-Z">Z</div>
+
+      <div class="term-card">
+        <div class="term-en">Zoom fatigue</div>
+        <div class="term-it">Stanchezza da videochiamata</div>
+        <div class="term-def">The physical and mental exhaustion caused by prolonged video conferencing, resulting from the extra cognitive effort needed to interpret limited non-verbal cues.</div>
+        <div class="term-ex">After four hours of online lessons, feeling drained and unable to concentrate is a typical symptom of <em>Zoom fatigue</em>.</div>
+        <div class="term-slide">→ Slide 02</div>
+      </div>
+
+    </div><!-- /term-list -->
+  </div><!-- /tab-termini -->
+
+  <!-- ══════════════════════════════════
        TAB 2 — FONTI ISTITUZIONALI
   ══════════════════════════════════ -->
   <div class="tab-panel" id="tab-fonti">
 
     <div class="intro-box">
-      Usa queste fonti per approfondire il tuo argomento e per indicarle nella slide come riferimenti. Priorità alle fonti <strong>UE e italiane</strong>, più autorevoli per un lavoro scolastico.
+      Usa queste fonti per approfondire il tuo argomento e citarle nella slide. Priorità alle fonti <strong>UE e italiane</strong>, più autorevoli per un lavoro scolastico.<br>
+      <span class="en-sub">Use these sources to research your topic and cite them in your slide. EU and Italian sources are the most authoritative for school work.</span>
     </div>
 
     <!-- UE -->
     <div class="sources-section">
-      <h3>🇪🇺 Fonti dell'Unione Europea</h3>
+      <h3>🇪🇺 Fonti dell'Unione Europea · <span style="font-weight:400;font-size:15px;">European Union Sources</span></h3>
       <div class="source-grid">
         <a class="source-card" href="https://digital-strategy.ec.europa.eu/it/policies/digitalisation-agriculture" target="_blank">
           <span class="src-tag src-eu">Commissione Europea</span>
           <h4>Digitalizzazione dell'Agricoltura UE</h4>
           <p>La strategia europea per il digitale nel settore primario: IA, big data, agricoltura di precisione.</p>
+          <p class="en-sub">The EU digital strategy for agriculture: AI, big data and precision farming.</p>
           <span class="src-url">digital-strategy.ec.europa.eu</span>
         </a>
         <a class="source-card" href="https://education.ec.europa.eu/it/focus-topics/digital-education/action-plan" target="_blank">
           <span class="src-tag src-eu">Commissione Europea</span>
           <h4>Piano d'Azione per l'Istruzione Digitale (DEAP)</h4>
           <p>Il piano europeo per l'educazione digitale nelle scuole: competenze, sicurezza, cittadinanza.</p>
+          <p class="en-sub">The European plan for digital education in schools: skills, safety, citizenship.</p>
           <span class="src-url">education.ec.europa.eu</span>
         </a>
         <a class="source-card" href="https://europa.eu/youth/EU/article/45/1315_it" target="_blank">
           <span class="src-tag src-eu">EU Youth Portal</span>
-          <h4>Competenze Digitali per i Giovani</h4>
-          <p>Il framework DigComp 2.2: le 5 aree di competenza digitale richieste a ogni cittadino europeo.</p>
+          <h4>Competenze Digitali per i Giovani – DigComp 2.2</h4>
+          <p>Le 5 aree di competenza digitale richieste a ogni cittadino europeo.</p>
+          <p class="en-sub">The 5 digital competence areas required of every European citizen.</p>
           <span class="src-url">europa.eu/youth</span>
         </a>
         <a class="source-card" href="https://www.europarl.europa.eu/factsheets/it/sheet/145/protezione-dei-dati-nell-ue" target="_blank">
           <span class="src-tag src-eu">Parlamento Europeo</span>
           <h4>GDPR – Protezione dei Dati nell'UE</h4>
-          <p>Spiegazione semplice del Regolamento Generale sulla Protezione dei Dati: diritti, obblighi, sanzioni.</p>
+          <p>Spiegazione semplice del Regolamento: diritti, obblighi, sanzioni.</p>
+          <p class="en-sub">Simple explanation of the GDPR: rights, obligations and penalties.</p>
           <span class="src-url">europarl.europa.eu</span>
         </a>
       </div>
@@ -962,30 +1571,34 @@ footer a { color:var(--mint); text-decoration:none; }
 
     <!-- ITALIA -->
     <div class="sources-section">
-      <h3>🇮🇹 Fonti Italiane Istituzionali</h3>
+      <h3>🇮🇹 Fonti Italiane Istituzionali · <span style="font-weight:400;font-size:15px;">Italian Institutional Sources</span></h3>
       <div class="source-grid">
         <a class="source-card" href="https://www.garanteprivacy.it" target="_blank">
           <span class="src-tag src-it">Garante Privacy</span>
           <h4>Garante per la Protezione dei Dati Personali</h4>
           <p>L'autorità italiana che tutela la privacy. Sezione dedicata ai giovani e alla scuola.</p>
+          <p class="en-sub">The Italian Data Protection Authority. Includes a section for young people and schools.</p>
           <span class="src-url">garanteprivacy.it</span>
         </a>
         <a class="source-card" href="https://www.commissariatodips.it" target="_blank">
           <span class="src-tag src-it">Polizia Postale</span>
           <h4>Commissariato di P.S. Online</h4>
-          <p>Guida al cyberbullismo, alle truffe online, al phishing e alla sicurezza in rete. Sezione ragazzi.</p>
+          <p>Guida a cyberbullismo, truffe online, phishing e sicurezza in rete. Sezione ragazzi.</p>
+          <p class="en-sub">Italian Postal Police online guide: cyberbullying, online scams, phishing and safety. Youth section available.</p>
           <span class="src-url">commissariatodips.it</span>
         </a>
         <a class="source-card" href="https://www.mise.gov.it/it/comunicazioni/internet-e-digitale" target="_blank">
           <span class="src-tag src-it">MIMIT</span>
           <h4>Ministero Imprese e Made in Italy – Digitale</h4>
           <p>Politiche italiane per la transizione digitale delle imprese, incluso il settore agroalimentare.</p>
+          <p class="en-sub">Italian government policies for digital transition in business, including the agri-food sector.</p>
           <span class="src-url">mimit.gov.it</span>
         </a>
-        <a class="source-card" href="https://www.smau.it/cybersecurity-e-privacy" target="_blank">
+        <a class="source-card" href="https://www.acn.gov.it" target="_blank">
           <span class="src-tag src-it">Cybersecurity</span>
           <h4>ACN – Agenzia per la Cybersicurezza Nazionale</h4>
           <p>Linee guida sulla sicurezza informatica per privati e imprese. Materiali formativi gratuiti.</p>
+          <p class="en-sub">National Cybersecurity Agency: guidelines for individuals and businesses. Free training materials.</p>
           <span class="src-url">acn.gov.it</span>
         </a>
       </div>
@@ -993,30 +1606,34 @@ footer a { color:var(--mint); text-decoration:none; }
 
     <!-- EDUCAZIONE -->
     <div class="sources-section">
-      <h3>📚 Risorse per la Didattica</h3>
+      <h3>📚 Risorse per la Didattica · <span style="font-weight:400;font-size:15px;">Educational Resources</span></h3>
       <div class="source-grid">
         <a class="source-card" href="https://feltrinelliscuola.it/wp-content/uploads/2025/10/netiquette.pdf" target="_blank">
-          <span class="src-tag src-edu">PDF Gratuito</span>
+          <span class="src-tag src-edu">PDF Gratuito · Free PDF</span>
           <h4>Netiquette – Feltrinelli Scuola</h4>
           <p>Scheda didattica completa sulla netiquette: regole, esempi, attività. Scaricabile gratuitamente.</p>
+          <p class="en-sub">Complete teaching sheet on netiquette: rules, examples, activities. Free download.</p>
           <span class="src-url">feltrinelliscuola.it</span>
         </a>
         <a class="source-card" href="https://www.generazioniconnesse.it" target="_blank">
-          <span class="src-tag src-edu">Progetto Europeo</span>
+          <span class="src-tag src-edu">Progetto Europeo · EU Project</span>
           <h4>Generazioni Connesse (Safer Internet)</h4>
-          <p>Il progetto italiano del programma Safer Internet UE: materiali su cyberbullismo, privacy, fake news.</p>
+          <p>Il progetto italiano di Safer Internet UE: materiali su cyberbullismo, privacy, fake news.</p>
+          <p class="en-sub">Italy's Safer Internet EU project: resources on cyberbullying, privacy and fake news.</p>
           <span class="src-url">generazioniconnesse.it</span>
         </a>
         <a class="source-card" href="https://www.agcom.it/documents/10179/0/Guida/6c14bb17-5f7f-44d4-aeaf-29c52c073a9a" target="_blank">
           <span class="src-tag src-edu">AGCOM</span>
           <h4>Guida per i Giovani – AGCOM</h4>
           <p>L'Autorità per le Garanzie nelle Comunicazioni: guida per adolescenti su media, social e diritti.</p>
+          <p class="en-sub">Italian Communications Authority: guide for teenagers on media, social networks and rights.</p>
           <span class="src-url">agcom.it</span>
         </a>
         <a class="source-card" href="https://www.stateofmind.it/2025/11/comunicazione-non-verbale/" target="_blank">
-          <span class="src-tag src-edu">Psicologia</span>
+          <span class="src-tag src-edu">Psicologia · Psychology</span>
           <h4>Comunicazione Non Verbale – State of Mind</h4>
           <p>Articolo scientifico accessibile sulla comunicazione non verbale e le sue implicazioni digitali.</p>
+          <p class="en-sub">Accessible scientific article on non-verbal communication and its digital implications.</p>
           <span class="src-url">stateofmind.it</span>
         </a>
       </div>
@@ -1024,30 +1641,34 @@ footer a { color:var(--mint); text-decoration:none; }
 
     <!-- PRIVACY & SICUREZZA -->
     <div class="sources-section">
-      <h3>🔐 Privacy e Digital Footprint</h3>
+      <h3>🔐 Privacy e Digital Footprint · <span style="font-weight:400;font-size:15px;">Privacy &amp; Digital Footprint</span></h3>
       <div class="source-grid">
         <a class="source-card" href="https://www.ibm.com/it-it/think/topics/digital-footprint" target="_blank">
           <span class="src-tag src-priv">IBM</span>
           <h4>Cos'è un'Impronta Digitale – IBM</h4>
-          <p>Spiegazione completa e attendibile di digital footprint attiva, passiva e di terze parti.</p>
+          <p>Spiegazione completa di digital footprint attiva, passiva e di terze parti.</p>
+          <p class="en-sub">Complete explanation of active, passive and third-party digital footprints.</p>
           <span class="src-url">ibm.com/it-it</span>
         </a>
         <a class="source-card" href="https://www.avg.com/it/signal/what-is-netiquette" target="_blank">
-          <span class="src-tag src-priv">AVG / Sicurezza</span>
+          <span class="src-tag src-priv">AVG / Sicurezza · Security</span>
           <h4>11 Regole della Netiquette – AVG</h4>
-          <p>Guida pratica e aggiornata alle regole del galateo online da parte di un'azienda di cybersecurity.</p>
+          <p>Guida pratica alle regole del galateo online da un'azienda di cybersecurity.</p>
+          <p class="en-sub">Practical guide to online etiquette rules, by a cybersecurity company.</p>
           <span class="src-url">avg.com/it</span>
         </a>
         <a class="source-card" href="https://www.scoprinetwork.com/boomers-vs-zoomers-comunicazione-generazionale-a-confronto/" target="_blank">
-          <span class="src-tag src-priv">Comunicazione</span>
+          <span class="src-tag src-priv">Comunicazione · Communication</span>
           <h4>Boomers vs Zoomers – ScopriNetwork</h4>
-          <p>Analisi del divario generazionale nella comunicazione digitale con esempi pratici e tabelle comparative.</p>
+          <p>Analisi del divario generazionale nella comunicazione digitale con esempi e tabelle.</p>
+          <p class="en-sub">Analysis of the generational gap in digital communication, with examples and comparison tables.</p>
           <span class="src-url">scoprinetwork.com</span>
         </a>
         <a class="source-card" href="https://www.ditals.com/la-comunicazione-interculturale/" target="_blank">
-          <span class="src-tag src-priv">Intercultura</span>
+          <span class="src-tag src-priv">Intercultura · Intercultural</span>
           <h4>Comunicazione Interculturale ed Emoji – DITALS</h4>
           <p>Come le emoji variano di significato tra culture diverse. Utile per la slide 09.</p>
+          <p class="en-sub">How emojis carry different meanings across cultures. Useful for slide 09.</p>
           <span class="src-url">ditals.com</span>
         </a>
       </div>
@@ -1068,12 +1689,11 @@ footer a { color:var(--mint); text-decoration:none; }
 
     <div class="warning-box">
       <div class="w-title">⚠️ Account gratuito — limite di 3 Padlet</div>
-      Il piano gratuito di Padlet permette di creare <strong>massimo 3 Padlet attivi</strong>. Se ne hai già 3, eliminane uno prima di iniziare. Registrati con la tua email scolastica (es. nome.cognome@iismendel.edu.it).
+      Il piano gratuito permette di creare <strong>massimo 3 Padlet attivi</strong>. Se ne hai già 3, eliminane uno prima di iniziare. Registrati con la tua email scolastica.
     </div>
 
     <!-- ─── PARTE 1 ─── -->
     <h3 class="guide-section-title">PARTE 1 — Crea il tuo Padlet</h3>
-
     <div class="guide-steps">
 
       <div class="step-card">
@@ -1115,9 +1735,9 @@ footer a { color:var(--mint); text-decoration:none; }
         <div class="step-num">5</div>
         <div class="step-content">
           <h4>Imposta la privacy su <strong>Privato</strong></h4>
-          <p>Sempre nelle Impostazioni, vai alla sezione <strong>Privacy</strong> e seleziona <strong>"Privato"</strong> (Private) oppure <strong>"Solo persone invitate"</strong> (Only people I invite). <strong>Non scegliere "Pubblico" o "Chiunque con il link"</strong> — il tuo Padlet deve essere visibile solo a te e al prof.</p>
+          <p>Nelle Impostazioni, vai alla sezione <strong>Privacy</strong> e seleziona <strong>"Privato"</strong> (Private) oppure <strong>"Solo persone invitate"</strong> (Only people I invite). <strong>Non scegliere "Pubblico" o "Chiunque con il link".</strong></p>
           <div class="privacy-notice">
-            🔒 <strong>Importante:</strong> mantenere il Padlet privato protegge il tuo lavoro. Solo il prof riceverà accesso, tramite invito email nel passo successivo.
+            🔒 <strong>Importante:</strong> il Padlet privato protegge il tuo lavoro. Solo il prof riceverà accesso tramite invito email nel passo successivo.
           </div>
         </div>
       </div>
@@ -1130,7 +1750,7 @@ footer a { color:var(--mint); text-decoration:none; }
           <ul>
             <li>Il <strong>Titolo</strong> in inglese (quello della tua slide)</li>
             <li>Il <strong>testo</strong>: 4–6 punti in inglese, con parole tue</li>
-            <li>Un <strong>allegato</strong> multimediale (vedi Parte 3 qui sotto per i dettagli)</li>
+            <li>Un <strong>elemento multimediale</strong> (vedi Parte 3 qui sotto)</li>
           </ul>
           <p style="margin-top:8px;">Quando hai finito, clicca <strong>Pubblica</strong> o <strong>Salva</strong>.</p>
         </div>
@@ -1140,7 +1760,7 @@ footer a { color:var(--mint); text-decoration:none; }
         <div class="step-num">7</div>
         <div class="step-content">
           <h4>Modifica la card quando vuoi</h4>
-          <p>Passa il mouse sopra la card → clicca sull'icona <strong>✏️ Matita</strong> o sui <strong>⋮ tre puntini</strong> → seleziona <strong>Modifica</strong>. Le modifiche vengono salvate automaticamente in tempo reale.</p>
+          <p>Passa il mouse sulla card → clicca sull'icona <strong>✏️ Matita</strong> o sui <strong>⋮ tre puntini</strong> → seleziona <strong>Modifica</strong>. Le modifiche vengono salvate automaticamente.</p>
         </div>
       </div>
 
@@ -1152,18 +1772,18 @@ footer a { color:var(--mint); text-decoration:none; }
     <div class="share-box">
       <h4>Invita il prof come collaboratore (con diritti di modifica)</h4>
       <ol class="share-steps">
-        <li data-n="1">Clicca sul pulsante <strong>Condividi</strong> (Share) — è l'icona con la freccia in alto a destra nel tuo Padlet.</li>
-        <li data-n="2">Nella sezione <strong>"Invita persone"</strong> (Invite people), inserisci l'indirizzo email del prof: <strong>m.crespi@iismendel.edu.it</strong> (o quello che ti verrà comunicato in classe).</li>
-        <li data-n="3">Nel menu a tendina accanto all'email, scegli il ruolo <strong>"Può modificare"</strong> (Can edit) — in questo modo il prof può visualizzare il tuo Padlet, lasciare commenti e apportare correzioni.</li>
-        <li data-n="4">Clicca <strong>Invia invito</strong>. Il prof riceve un'email con il link diretto al tuo Padlet.</li>
-        <li data-n="5">Vai su <strong>Google Classroom</strong>, apri l'attività di Ed. Civica e nella sezione "Il tuo lavoro" incolla anche l'<strong>URL della pagina</strong> del tuo Padlet (lo trovi nella barra dell'indirizzo del browser). Clicca <strong>Consegna</strong>.</li>
+        <li data-n="1">Clicca sul pulsante <strong>Condividi (Share)</strong> — l'icona con la freccia in alto a destra nel tuo Padlet.</li>
+        <li data-n="2">Nella sezione <strong>"Invita persone" (Invite people)</strong>, inserisci l'email del prof comunicata in classe.</li>
+        <li data-n="3">Nel menu a tendina accanto all'email, scegli il ruolo <strong>"Può modificare" (Can edit)</strong> — così il prof può visualizzare, commentare e correggere il tuo lavoro.</li>
+        <li data-n="4">Clicca <strong>Invia invito (Send invite)</strong>. Il prof riceve un'email con il link diretto al tuo Padlet.</li>
+        <li data-n="5">Vai su <strong>Google Classroom</strong>, apri l'attività di Ed. Civica e nella sezione "Il tuo lavoro" incolla anche l'<strong>URL del tuo Padlet</strong> (lo trovi nella barra del browser). Clicca <strong>Consegna</strong>.</li>
       </ol>
     </div>
 
     <!-- ─── PARTE 3 ─── -->
     <h3 class="guide-section-title" style="margin-top:32px;">PARTE 3 — Cosa puoi aggiungere alla slide</h3>
 
-    <p style="font-size:14px; color:var(--muted); margin-bottom:16px;">Clicca sul pulsante <strong>+</strong> della card per aprire il pannello di caricamento. Ecco tutto quello che puoi inserire:</p>
+    <p style="font-size:14px; color:var(--muted); margin-bottom:16px;">Clicca il pulsante <strong>+</strong> della card per aprire il pannello di caricamento. Ecco tutto quello che puoi inserire:</p>
 
     <div class="media-grid">
 
@@ -1171,12 +1791,7 @@ footer a { color:var(--mint); text-decoration:none; }
         <div class="media-icon">🖼️</div>
         <div class="media-name">Foto e immagini</div>
         <div class="media-how">
-          <strong>Come fare:</strong> clicca sull'icona immagine → scegli
-          <em>Carica file</em> (dal tuo dispositivo) oppure <em>Cerca sul web</em>
-          (motore integrato Padlet). Usa immagini libere da copyright:
-          <a href="https://unsplash.com" target="_blank">Unsplash</a> o
-          <a href="https://www.pexels.com/it-it/" target="_blank">Pexels</a>.
-          Scrivi "Fonte: [nome sito]" nel corpo del testo.
+          <strong>Come fare:</strong> clicca l'icona immagine → <em>Carica file</em> (dal dispositivo) o <em>Cerca sul web</em> (motore integrato Padlet). Usa immagini libere da copyright: <a href="https://unsplash.com" target="_blank">Unsplash</a> o <a href="https://www.pexels.com/it-it/" target="_blank">Pexels</a>. Scrivi "Source: [nome sito]" nel testo.
         </div>
       </div>
 
@@ -1184,11 +1799,7 @@ footer a { color:var(--mint); text-decoration:none; }
         <div class="media-icon">🎬</div>
         <div class="media-name">Video YouTube</div>
         <div class="media-how">
-          <strong>Come fare:</strong> vai su YouTube, copia l'URL del video dalla
-          barra dell'indirizzo. Nel pannello della card clicca sull'icona
-          <em>Link</em> e incolla l'URL. Padlet lo incorpora automaticamente
-          come player video. Ottimo per clip su netiquette, cyberbullismo o
-          digital footprint.
+          <strong>Come fare:</strong> copia l'URL del video dalla barra del browser → nel pannello della card clicca <em>Link</em> e incolla. Padlet lo incorpora automaticamente come player video. Ottimo per clip su netiquette, cyberbullismo o digital footprint.
         </div>
       </div>
 
@@ -1196,24 +1807,15 @@ footer a { color:var(--mint); text-decoration:none; }
         <div class="media-icon">🔗</div>
         <div class="media-name">Link a siti web</div>
         <div class="media-how">
-          <strong>Come fare:</strong> copia l'URL di qualsiasi pagina web
-          (es. un articolo, una fonte istituzionale). Clicca sull'icona
-          <em>Link</em> nella card e incollalo. Padlet mostra un'anteprima
-          automatica con titolo e immagine della pagina. Ideale per le
-          fonti della tab "Fonti Istituzionali".
+          <strong>Come fare:</strong> copia l'URL di un articolo o fonte istituzionale → clicca <em>Link</em> nella card → incolla. Padlet mostra un'anteprima automatica con titolo e immagine della pagina. Ideale per le fonti della tab "Fonti".
         </div>
       </div>
 
       <div class="media-card">
         <div class="media-icon">📚</div>
-        <div class="media-name">Libri e titoli bibliografici</div>
+        <div class="media-name">Libri e riferimenti bibliografici</div>
         <div class="media-how">
-          <strong>Come fare:</strong> cerca il libro su
-          <a href="https://books.google.it" target="_blank">Google Books</a>
-          o <a href="https://openlibrary.org" target="_blank">Open Library</a>
-          e incolla il link nella card. In alternativa, scrivi nel corpo del
-          testo la citazione: <em>Autore, Titolo, Anno</em>. Puoi aggiungere
-          la copertina come immagine separata.
+          <strong>Come fare:</strong> cerca il libro su <a href="https://books.google.it" target="_blank">Google Books</a> o <a href="https://openlibrary.org" target="_blank">Open Library</a> e incolla il link. In alternativa scrivi la citazione nel testo: <em>Autore, Titolo, Anno</em>. Puoi aggiungere la copertina come immagine separata.
         </div>
       </div>
 
@@ -1221,11 +1823,7 @@ footer a { color:var(--mint); text-decoration:none; }
         <div class="media-icon">🎵</div>
         <div class="media-name">Audio e podcast</div>
         <div class="media-how">
-          <strong>Come fare:</strong> carica un file audio dal tuo dispositivo
-          (formati MP3, WAV, M4A) tramite l'icona <em>Carica file</em>.
-          In alternativa, incolla il link di un episodio Spotify o di un
-          podcast web: Padlet crea un player incorporato. Utile per
-          interviste o clip audio su cittadinanza digitale.
+          <strong>Come fare:</strong> carica un file audio (MP3, WAV, M4A) dal dispositivo tramite <em>Carica file</em>. In alternativa incolla il link di un episodio Spotify o podcast web: Padlet crea un player incorporato. Utile per interviste o clip audio su cittadinanza digitale.
         </div>
       </div>
 
@@ -1233,11 +1831,7 @@ footer a { color:var(--mint); text-decoration:none; }
         <div class="media-icon">📄</div>
         <div class="media-name">Documenti PDF</div>
         <div class="media-how">
-          <strong>Come fare:</strong> clicca sull'icona <em>Carica file</em>
-          e seleziona un PDF dal dispositivo. Padlet lo mostra come
-          anteprima sfogliabile direttamente nella card. Utile per caricare
-          le schede didattica di Feltrinelli Scuola o le guide del Garante
-          Privacy scaricate dalla tab Fonti.
+          <strong>Come fare:</strong> clicca <em>Carica file</em> e seleziona un PDF dal dispositivo. Padlet lo mostra come anteprima sfogliabile direttamente nella card. Utile per le schede Feltrinelli Scuola o le guide del Garante Privacy.
         </div>
       </div>
 
@@ -1245,23 +1839,15 @@ footer a { color:var(--mint); text-decoration:none; }
         <div class="media-icon">📸</div>
         <div class="media-name">Foto dalla fotocamera</div>
         <div class="media-how">
-          <strong>Come fare (da smartphone o tablet):</strong> clicca
-          sull'icona <em>Fotocamera</em> nella card. Si apre direttamente
-          la fotocamera del dispositivo: scatta e la foto viene caricata
-          automaticamente. Utile se vuoi fotografare qualcosa di fisico
-          (es. una pubblicità, un cartello) come esempio per la slide.
+          <strong>Come fare (da smartphone o tablet):</strong> clicca l'icona <em>Fotocamera</em> nella card. Si apre direttamente la fotocamera del dispositivo: scatta e la foto viene caricata automaticamente. Utile per fotografare esempi fisici come cartelli o pubblicità.
         </div>
       </div>
 
       <div class="media-card">
         <div class="media-icon">🗺️</div>
-        <div class="media-name">Posizione / Mappa</div>
+        <div class="media-name">Mappa / Posizione</div>
         <div class="media-how">
-          <strong>Come fare:</strong> clicca sull'icona <em>Posizione</em>
-          (Location) e cerca un luogo nel campo di ricerca. Padlet inserisce
-          una mappa interattiva di Google Maps nella card. Utile per la
-          slide sulle differenze culturali (es. mostrare dove certe emoji
-          hanno significati diversi).
+          <strong>Come fare:</strong> clicca l'icona <em>Posizione (Location)</em> e cerca un luogo nel campo di ricerca. Padlet inserisce una mappa interattiva di Google Maps. Utile per la slide sulle differenze culturali.
         </div>
       </div>
 
@@ -1275,10 +1861,10 @@ footer a { color:var(--mint); text-decoration:none; }
         <li>La privacy è impostata su <strong>Privato</strong> (non pubblico)</li>
         <li>Hai invitato il prof con il ruolo <strong>"Può modificare"</strong></li>
         <li>La card ha un titolo in inglese ben visibile</li>
-        <li>Il testo è in inglese, scritto con parole tue (no copia-incolla da Wikipedia)</li>
+        <li>Il testo è in inglese, con parole tue (no copia-incolla)</li>
         <li>Hai almeno <strong>un elemento multimediale</strong> (immagine, video o link)</li>
-        <li>Hai indicato la fonte dell'immagine o hai usato Unsplash / Pexels</li>
-        <li>Hai incollato il link del Padlet anche su <strong>Google Classroom</strong></li>
+        <li>Hai indicato la fonte dell'immagine o usato Unsplash / Pexels</li>
+        <li>Hai incollato il link del Padlet su <strong>Google Classroom</strong></li>
       </ul>
     </div>
 
@@ -1310,6 +1896,13 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 });
 
 /* Allow nav hash links to trigger tabs */
+document.querySelectorAll('a[href="#termini"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector('[data-tab="termini"]').click();
+    document.querySelector('.tab-container').scrollIntoView({behavior:'smooth'});
+  });
+});
 document.querySelectorAll('a[href="#fonti"]').forEach(a => {
   a.addEventListener('click', e => {
     e.preventDefault();
